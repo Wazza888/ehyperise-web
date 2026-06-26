@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ehyperise | Partner Program for Accountants & Bookkeepers</title>
-    <meta name="description" content="Partner with Ehyperise. You refer clients drowning in admin. We build the system that saves them. You earn 15% ongoing commission.">
+    <meta name="description" content="Earn $750/month per referral. You refer clients drowning in admin. We build the system that saves them. 15% ongoing commission for life.">
     
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
@@ -17,15 +17,8 @@
             --pure-white: #FFFFFF;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Poppins', sans-serif;
@@ -35,456 +28,105 @@
             font-size: 16px;
         }
 
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+        .section { padding: 80px 0; }
+        .section-light-bg { background-color: var(--light-grey-bg); }
 
-        .section {
-            padding: 80px 0;
-        }
-        
-        .section-light-bg {
-            background-color: var(--light-grey-bg);
-        }
+        h1, h2, h3 { font-weight: 700; line-height: 1.2; margin-bottom: 20px; }
+        h1 { font-size: 3rem; }
+        h2 { font-size: 2.5rem; text-align: center; }
+        h3 { font-size: 1.5rem; }
+        p { margin-bottom: 20px; }
 
-        h1, h2, h3 {
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 20px;
-        }
-
-        h1 {
-            font-size: 3rem;
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            text-align: center;
-        }
-        
-        h3 {
-            font-size: 1.5rem;
-        }
-
-        p {
-            margin-bottom: 20px;
-        }
-
-        .text-center {
-            text-align: center;
-        }
-        
-        .highlight {
-            color: var(--vibrant-green);
-        }
+        .text-center { text-align: center; }
+        .highlight { color: var(--vibrant-green); }
 
         .btn {
-            display: inline-block;
-            padding: 12px 28px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: 2px solid transparent;
+            display: inline-block; padding: 12px 28px; border-radius: 5px;
+            text-decoration: none; font-weight: 600; transition: all 0.3s ease;
+            cursor: pointer; border: 2px solid transparent;
         }
-
         .btn-primary {
-            background-color: var(--vibrant-green);
-            color: var(--strong-black);
-            font-weight: 700;
+            background-color: var(--vibrant-green); color: var(--strong-black); font-weight: 700;
         }
-
         .btn-primary:hover {
-            background-color: var(--pure-white);
-            color: var(--strong-black);
-            border-color: var(--vibrant-green);
+            background-color: var(--pure-white); color: var(--strong-black); border-color: var(--vibrant-green);
         }
-
         .btn-secondary {
-            background-color: transparent;
-            color: var(--strong-black);
-            border-color: var(--strong-black);
+            background-color: transparent; color: var(--strong-black); border-color: var(--strong-black);
         }
-        
         .btn-secondary:hover {
-            background-color: var(--strong-black);
-            color: var(--pure-white);
+            background-color: var(--strong-black); color: var(--pure-white);
         }
 
-        .hero {
-            padding: 100px 0;
-            text-align: center;
-        }
+        .hero { padding: 100px 0; text-align: center; }
+        .hero h1 { max-width: 800px; margin-left: auto; margin-right: auto; }
+        .hero .sub-headline { font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px auto; color: var(--strong-black); }
 
-        .hero h1 {
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+        .hero-stats { display: flex; justify-content: center; gap: 60px; margin-top: 50px; }
+        .hero-stat h2 { font-size: 2.5rem; color: var(--vibrant-green); text-align: center; margin-bottom: 0; }
+        .hero-stat p { font-size: 0.9rem; color: #555; margin: 4px 0 0; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
 
-        .hero .sub-headline {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 30px auto;
-            color: var(--strong-black);
-        }
+        .split-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 50px; }
+        .split-card { background: var(--pure-white); padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #eee; }
+        .split-card h3 { font-size: 1.2rem; margin-bottom: 16px; }
+        .split-card ul { list-style: none; }
+        .split-card li { padding-left: 30px; position: relative; margin-bottom: 12px; font-size: 0.95rem; }
+        .split-card.problem li::before { content: '✕'; color: #e74c3c; font-weight: 700; position: absolute; left: 0; top: 0; }
+        .split-card.solution li::before { content: '✓'; color: var(--vibrant-green); font-weight: 700; position: absolute; left: 0; top: 0; }
 
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 60px;
-            margin-top: 50px;
-        }
+        .pain-points { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 50px; }
+        .pain-point-card { background: var(--pure-white); padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center; border: 1px solid #eee; }
+        .pain-point-card .icon { font-size: 3rem; color: var(--vibrant-green); margin-bottom: 15px; }
+        .pain-point-card h3 { font-size: 1.2rem; margin-bottom: 10px; }
 
-        .hero-stat h2 {
-            font-size: 2.5rem;
-            color: var(--vibrant-green);
-            text-align: center;
-            margin-bottom: 0;
-        }
+        .steps { max-width: 700px; margin: 50px auto 0; }
+        .step { display: flex; gap: 24px; align-items: flex-start; margin-bottom: 36px; }
+        .step-num { min-width: 48px; height: 48px; background: var(--vibrant-green); color: var(--strong-black); font-size: 1.2rem; font-weight: 700; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .step-content h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; }
+        .step-content p { font-size: 0.95rem; color: #333; margin: 0; }
 
-        .hero-stat p {
-            font-size: 0.9rem;
-            color: #555;
-            margin: 4px 0 0;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 600;
-        }
+        .table-wrap { max-width: 700px; margin: 50px auto 0; background: var(--pure-white); padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #eee; }
+        .table-wrap h3 { text-align: center; margin-bottom: 24px; }
+        .comm-table { width: 100%; border-collapse: collapse; }
+        .comm-table th { text-align: left; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: #555; font-weight: 600; padding-bottom: 12px; border-bottom: 1px solid #ddd; }
+        .comm-table td { padding: 14px 0; border-bottom: 1px solid #eee; font-size: 0.95rem; }
+        .comm-table tr:last-child td { border: none; }
+        .comm-table .green { color: var(--vibrant-green); font-weight: 700; }
+        .comm-note { margin-top: 24px; padding: 16px 20px; background: var(--light-grey-bg); border-left: 3px solid var(--vibrant-green); border-radius: 5px; font-size: 0.85rem; color: #333; line-height: 1.6; }
 
-        .pain-points {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 50px;
-        }
+        .profile-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 700px; margin: 50px auto 0; }
+        .chip { display: flex; align-items: center; gap: 10px; padding: 14px 18px; background: var(--pure-white); border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #eee; font-size: 0.95rem; font-weight: 600; }
+        .chip .icon { font-size: 1.2rem; }
 
-        .pain-point-card {
-            background: var(--pure-white);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            text-align: center;
-            border: 1px solid #eee;
-        }
+        .effort-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 700px; margin: 50px auto 0; }
+        .effort-item { display: flex; align-items: center; gap: 12px; padding: 14px 18px; background: var(--pure-white); border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #eee; font-size: 0.95rem; font-weight: 500; }
+        .effort-item .x { color: var(--vibrant-green); font-weight: 700; font-size: 1.1rem; }
 
-        .pain-point-card .icon {
-            font-size: 3rem;
-            color: var(--vibrant-green);
-            margin-bottom: 15px;
-        }
-        
-        .pain-point-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
+        .cta-section { background-color: var(--strong-black); color: var(--pure-white); border-radius: 10px; padding: 60px; text-align: center; }
+        .cta-section h2 { color: var(--pure-white); }
+        .cta-section p { max-width: 600px; margin: 0 auto 30px auto; }
+        .cta-section .btn-primary { background-color: var(--vibrant-green); color: var(--strong-black); }
+        .cta-section .btn-primary:hover { background-color: var(--pure-white); color: var(--strong-black); border-color: var(--vibrant-green); }
+        .cta-small { margin-top: 20px; font-size: 0.85rem; color: #aaa; }
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            margin-top: 50px;
-            align-items: center;
-        }
+        .site-footer { padding: 50px 0; text-align: center; background-color: var(--light-grey-bg); }
+        .site-footer p { font-size: 0.9rem; color: #555; margin: 0; }
 
-        .service-card {
-            background: var(--pure-white);
-            padding: 40px;
-            border-radius: 8px;
-            border: 1px solid #ddd;
-        }
-
-        .service-card .service-number {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--vibrant-green);
-            margin-bottom: 10px;
-        }
-        
-        .service-card p {
-            font-size: 0.95rem;
-        }
-
-        .split-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-top: 50px;
-        }
-
-        .split-card {
-            background: var(--pure-white);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border: 1px solid #eee;
-        }
-
-        .split-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 16px;
-        }
-
-        .split-card ul {
-            list-style: none;
-            margin-top: 0;
-        }
-
-        .split-card li {
-            padding-left: 30px;
-            position: relative;
-            margin-bottom: 12px;
-            font-size: 0.95rem;
-        }
-
-        .split-card.problem li::before {
-            content: '✕';
-            color: #e74c3c;
-            font-weight: 700;
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
-
-        .split-card.solution li::before {
-            content: '✓';
-            color: var(--vibrant-green);
-            font-weight: 700;
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
-
-        .steps {
-            max-width: 700px;
-            margin: 50px auto 0;
-        }
-
-        .step {
-            display: flex;
-            gap: 24px;
-            align-items: flex-start;
-            margin-bottom: 36px;
-        }
-
-        .step-num {
-            min-width: 48px;
-            height: 48px;
-            background: var(--vibrant-green);
-            color: var(--strong-black);
-            font-size: 1.2rem;
-            font-weight: 700;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .step-content h4 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 4px;
-        }
-
-        .step-content p {
-            font-size: 0.95rem;
-            color: #333;
-            margin: 0;
-        }
-
-        .table-wrap {
-            max-width: 700px;
-            margin: 50px auto 0;
-            background: var(--pure-white);
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border: 1px solid #eee;
-        }
-
-        .table-wrap h3 {
-            text-align: center;
-            margin-bottom: 24px;
-        }
-
-        .comm-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .comm-table th {
-            text-align: left;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #555;
-            font-weight: 600;
-            padding-bottom: 12px;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .comm-table td {
-            padding: 14px 0;
-            border-bottom: 1px solid #eee;
-            font-size: 0.95rem;
-        }
-
-        .comm-table tr:last-child td {
-            border: none;
-        }
-
-        .comm-table .green {
-            color: var(--vibrant-green);
-            font-weight: 700;
-        }
-
-        .comm-note {
-            margin-top: 24px;
-            padding: 16px 20px;
-            background: var(--light-grey-bg);
-            border-left: 3px solid var(--vibrant-green);
-            border-radius: 5px;
-            font-size: 0.85rem;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        .profile-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            max-width: 700px;
-            margin: 50px auto 0;
-        }
-
-        .chip {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 14px 18px;
-            background: var(--pure-white);
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border: 1px solid #eee;
-            font-size: 0.95rem;
-            font-weight: 600;
-        }
-
-        .chip .icon {
-            font-size: 1.2rem;
-        }
-
-        .effort-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            max-width: 700px;
-            margin: 50px auto 0;
-        }
-
-        .effort-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 14px 18px;
-            background: var(--pure-white);
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border: 1px solid #eee;
-            font-size: 0.95rem;
-            font-weight: 500;
-        }
-
-        .effort-item .x {
-            color: var(--vibrant-green);
-            font-weight: 700;
-            font-size: 1.1rem;
-        }
-
-        .cta-section {
-            background-color: var(--strong-black);
-            color: var(--pure-white);
-            border-radius: 10px;
-            padding: 60px;
-            text-align: center;
-        }
-
-        .cta-section h2 {
-            color: var(--pure-white);
-        }
-
-        .cta-section p {
-            max-width: 600px;
-            margin: 0 auto 30px auto;
-        }
-
-        .cta-section .btn-primary {
-            background-color: var(--vibrant-green);
-            color: var(--strong-black);
-        }
-
-        .cta-section .btn-primary:hover {
-            background-color: var(--pure-white);
-            color: var(--strong-black);
-            border-color: var(--vibrant-green);
-        }
-
-        .cta-small {
-            margin-top: 20px;
-            font-size: 0.85rem;
-            color: #aaa;
-        }
-
-        .site-footer {
-            padding: 50px 0;
-            text-align: center;
-            background-color: var(--light-grey-bg);
-        }
-
-        .site-footer p {
-            font-size: 0.9rem;
-            color: #555;
-            margin: 0;
-        }
-
-        .section-label {
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--vibrant-green);
-            text-align: center;
-            margin-bottom: 8px;
-        }
+        .section-label { font-size: 0.8rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--vibrant-green); text-align: center; margin-bottom: 8px; }
 
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
             h2 { font-size: 2rem; }
-            
             .hero { padding: 60px 0; }
             .hero-stats { flex-direction: column; gap: 24px; }
             .pain-points { grid-template-columns: 1fr; }
-            .services-grid { grid-template-columns: 1fr; }
             .split-grid { grid-template-columns: 1fr; }
             .profile-grid { grid-template-columns: 1fr; }
             .effort-grid { grid-template-columns: 1fr; }
-
-            .section {
-                padding: 60px 0;
-            }
-
-            .cta-section {
-                padding: 40px 24px;
-                border-radius: 0;
-            }
-
-            .table-wrap {
-                padding: 24px;
-            }
+            .section { padding: 60px 0; }
+            .cta-section { padding: 40px 24px; border-radius: 0; }
+            .table-wrap { padding: 24px; }
         }
     </style>
 </head>
@@ -494,108 +136,79 @@
         <!-- HERO -->
         <section class="hero">
             <div class="container">
-                <p style="font-size:0.85rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--vibrant-green);margin-bottom:16px;">⚡ Partner Program</p>
-                <h1>Your clients are drowning in admin.<br><span class="highlight">We fix it. You earn recurring commission.</span></h1>
+                <p style="font-size:0.85rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--vibrant-green);margin-bottom:16px;">Accountant & Bookkeeper Partnership</p>
+                <h1>Earn $750/month per client referral.<br><span class="highlight">You make the intro. We do everything else.</span></h1>
                 <p class="sub-headline">
-                    Introducing the Ehyperise partner program for accountants and bookkeepers. Spot the businesses on your books still running on paper and spreadsheets. We build the system that saves them. You earn 15% ongoing commission on every client you refer — for life.
+                    You have clients running on paper, chasing invoices weeks late, and working weekends just to keep up. Ehyperise builds the system that fixes it — a digital operating system with a dedicated VA team. You refer. We deliver. You earn 15% commission for life.
                 </p>
+                <a href="#" class="btn btn-primary" onclick="alert('Replace with your Calendly link'); return false;">Get My Partner Kit</a>
                 <div class="hero-stats">
                     <div class="hero-stat">
                         <h2>15%</h2>
-                        <p>Ongoing commission</p>
+                        <p>Lifetime commission</p>
                     </div>
                     <div class="hero-stat">
                         <h2>$750</h2>
                         <p>Per client / month</p>
                     </div>
                     <div class="hero-stat">
-                        <h2>$0</h2>
-                        <p>Effort from you</p>
+                        <h2>1</h2>
+                        <p>Email to start earning</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- PROBLEM / SOLUTION -->
+        <!-- PAIN POINT: Why accountants? -->
         <section class="section section-light-bg">
             <div class="container">
-                <p class="section-label">⚡ The Opportunity</p>
-                <h2>Your clients are bleeding time &amp; money.<br><span class="highlight">They just don't see it.</span></h2>
-                <div class="split-grid">
-                    <div class="split-card problem">
-                        <h3>What They're Living With</h3>
-                        <ul>
-                            <li>5–6 week invoicing lag — cash tied up for months</li>
-                            <li>Staff waiting for phone approvals — burning payroll</li>
-                            <li>Owner working weekends just to keep afloat</li>
-                            <li>Decades of reputation on paper and head knowledge</li>
-                            <li>No system to scale — every hire starts from zero</li>
-                        </ul>
-                    </div>
-                    <div class="split-card solution">
-                        <h3>What Ehyperise Delivers</h3>
-                        <ul>
-                            <li>Invoicing within 24 hours — cash gap closed</li>
-                            <li>Digital approvals — no more phone tag</li>
-                            <li>3-person VA team handles all admin</li>
-                            <li>Company Brain captures every procedure</li>
-                            <li>Fixed monthly cost — predictable, no surprises</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- WHAT WE DO -->
-        <section class="section">
-            <div class="container">
-                <p class="section-label">⚡ What We Do</p>
-                <h2>We build the operating system for<br><span class="highlight">trade &amp; service businesses.</span></h2>
+                <p class="section-label">The Problem You See Every Day</p>
+                <h2>You have clients on your books who are<br><span class="highlight">one burnt-out admin away from disaster.</span></h2>
                 <div class="pain-points">
                     <div class="pain-point-card">
-                        <div class="icon">📋</div>
-                        <h3>Digital Field Operations</h3>
-                        <p>Auto job cards, digital approvals, photo QC, and a searchable archive of every job — all in one system.</p>
+                        <div class="icon">💰</div>
+                        <h3>Cash Flow Leaking</h3>
+                        <p>You see $200k+ in receivables sitting there. They see a system that's always been this way. They don't know what they don't know.</p>
                     </div>
                     <div class="pain-point-card">
-                        <div class="icon">🧠</div>
-                        <h3>The Company Brain</h3>
-                        <p>A searchable wiki of every procedure. A training academy so new hires represent the brand exactly as the founder does.</p>
+                        <div class="icon">⏰</div>
+                        <h3>Owner Burning Out</h3>
+                        <p>They're working weekends, approving every job by phone, and have no one to hand things off to. You've watched it get worse every quarter.</p>
                     </div>
                     <div class="pain-point-card">
-                        <div class="icon">👥</div>
-                        <h3>Managed Admin Team</h3>
-                        <p>A dedicated VA team handling invoicing, scheduling, and dispatch. We train, manage, and retain them — the client does nothing.</p>
+                        <div class="icon">📄</div>
+                        <h3>Paper Running the Show</h3>
+                        <p>Job cards, handwritten notes, spreadsheets that haven't been updated since 2019. There's no system — just the owner's memory keeping it together.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- HOW IT WORKS -->
-        <section class="section section-light-bg">
+        <section class="section">
             <div class="container">
-                <p class="section-label">⚡ For Your Firm</p>
-                <h2>Three steps to <span class="highlight">effortless recurring income.</span></h2>
+                <p class="section-label">How It Works</p>
+                <h2>You already have what we need.<br><span class="highlight">Your client list.</span></h2>
                 <div class="steps">
                     <div class="step">
                         <div class="step-num">1</div>
                         <div class="step-content">
-                            <h4>Identify</h4>
-                            <p>You know which clients are still on paper, working weekends, and can't scale. You already have the list — you see their P&amp;L.</p>
+                            <h4>Pick the right client from your books</h4>
+                            <p>You know exactly who's still on paper, working weekends, and can't seem to grow. $1M+ revenue, 5–30 staff, family-run trade or service business. You see their P&amp;L — you already know.</p>
                         </div>
                     </div>
                     <div class="step">
                         <div class="step-num">2</div>
                         <div class="step-content">
-                            <h4>Introduce</h4>
-                            <p>A warm email or 2-minute call from you is all it takes. "I've found a team that fixes your admin problem for good — let me connect you."</p>
+                            <h4>Send one email introducing us</h4>
+                            <p>"I've come across a team that fixes the admin problem we keep talking about. Worth a 15-minute chat." That's it. We handle the rest from there.</p>
                         </div>
                     </div>
                     <div class="step">
                         <div class="step-num">3</div>
                         <div class="step-content">
-                            <h4>Earn</h4>
-                            <p>We close, deliver, and manage everything. You collect <strong>15% monthly commission</strong> for the life of every client you refer. No cap, no expiry.</p>
+                            <h4>Collect 15% commission every month</h4>
+                            <p>We build the system, train the VA team, and manage the client. You earn 15% of the monthly fee for as long as they're a client. No cap, no expiry, no extra work.</p>
                         </div>
                     </div>
                 </div>
@@ -603,17 +216,17 @@
         </section>
 
         <!-- COMMISSION -->
-        <section class="section">
+        <section class="section section-light-bg">
             <div class="container">
-                <p class="section-label">⚡ The Numbers</p>
-                <h2>What <span class="highlight">15% ongoing</span> looks like in your pocket.</h2>
+                <p class="section-label">The Numbers</p>
+                <h2>Five referrals = <span class="highlight">$45,000 a year in passive income.</span></h2>
                 <div class="table-wrap">
-                    <h3>Commission Structure</h3>
+                    <h3>Commission at 15%</h3>
                     <table class="comm-table">
                         <tr>
                             <th>Clients Referred</th>
                             <th>Your Monthly Commission</th>
-                            <th>Annual Revenue</th>
+                            <th>Annual Partner Revenue</th>
                         </tr>
                         <tr>
                             <td>1 client</td>
@@ -637,57 +250,82 @@
                         </tr>
                     </table>
                     <div class="comm-note">
-                        <strong>No cap, no expiry, no effort.</strong> You earn 15% of the monthly managed fee for every client you refer — as long as they're a client. If your client upgrades, your commission grows. All you do is make the introduction.
+                        <strong>Recurring, not one-off.</strong> You earn 15% of the monthly managed fee for every client you refer. If they upgrade, your commission grows. One introduction is all it takes to start.
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- IDEAL CLIENT -->
+        <!-- WHAT WE DO -->
+        <section class="section">
+            <div class="container">
+                <p class="section-label">What We Deliver</p>
+                <h2>We build the operating system your clients need<br><span class="highlight">so they can finally step back.</span></h2>
+                <div class="pain-points">
+                    <div class="pain-point-card">
+                        <div class="icon">📋</div>
+                        <h3>Digital Field Operations</h3>
+                        <p>Auto job cards from email, digital approvals, mandatory before/after photos. Every job searchable by address in seconds — no more paper trails.</p>
+                    </div>
+                    <div class="pain-point-card">
+                        <div class="icon">🧠</div>
+                        <h3>The Company Brain</h3>
+                        <p>A searchable wiki of every procedure. A training academy so new hires represent the brand exactly as the founder does. The business survives its owner.</p>
+                    </div>
+                    <div class="pain-point-card">
+                        <div class="icon">👥</div>
+                        <h3>Managed Admin Team</h3>
+                        <p>A 3-person VA team handling invoicing, scheduling, and dispatch. We train and manage them — the client does nothing. Zero overhead, zero headaches.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- IDEAL CLIENT PROFILE -->
         <section class="section section-light-bg">
             <div class="container">
-                <p class="section-label">⚡ Who To Look For</p>
-                <h2>Your ideal referral is probably<br><span class="highlight">already on your books.</span></h2>
+                <p class="section-label">Who To Refer</p>
+                <h2>These are the clients you already worry about.<br><span class="highlight">The ones who can't seem to get out of their own way.</span></h2>
                 <div class="profile-grid">
-                    <div class="chip"><span class="icon">💰</span> $1M+ annual revenue</div>
+                    <div class="chip"><span class="icon">💰</span> $1M+ annual revenue, no systems</div>
                     <div class="chip"><span class="icon">📄</span> Still running on paper or spreadsheets</div>
                     <div class="chip"><span class="icon">👥</span> 5–30 employees, family-run</div>
                     <div class="chip"><span class="icon">📞</span> Owner approves every job personally</div>
                     <div class="chip"><span class="icon">💳</span> Chasing invoices 4+ weeks overdue</div>
                     <div class="chip"><span class="icon">📅</span> Owner works 6+ days a week</div>
                     <div class="chip"><span class="icon">🛠️</span> Trade, service, or construction</div>
-                    <div class="chip"><span class="icon">😤</span> "I'm too busy to fix the admin"</div>
+                    <div class="chip"><span class="icon">😤</span> "I know I need to fix the admin, but I'm too busy"</div>
                 </div>
             </div>
         </section>
 
-        <!-- WHY PARTNER -->
+        <!-- Why You -->
         <section class="section">
             <div class="container">
-                <p class="section-label">⚡ Why Partner With Us</p>
-                <h2>You already have the trust.<br><span class="highlight">We bring the fix.</span></h2>
+                <p class="section-label">Why You</p>
+                <h2>Three reasons this works better than any<br><span class="highlight">referral partnership you've seen.</span></h2>
                 <div class="pain-points">
                     <div class="pain-point-card">
-                        <h4 style="font-size:1.2rem;font-weight:700;margin-bottom:10px;">🔍 You See What They Don't</h4>
-                        <p style="font-size:0.95rem;">You know which clients have cash tied up in receivables. You see the admin bloat in their P&amp;L. You're the only one who can spot the opportunity.</p>
+                        <h4 style="font-size:1.2rem;font-weight:700;margin-bottom:10px;">🔍 You Already Know Who Needs This</h4>
+                        <p style="font-size:0.95rem;">You see their P&amp;L. You know who's sitting on $200k in receivables and who's bleeding payroll on inefficiency. No cold outreach needed — you have the list.</p>
                     </div>
                     <div class="pain-point-card">
-                        <h4 style="font-size:1.2rem;font-weight:700;margin-bottom:10px;">🤝 You Have the Relationship</h4>
-                        <p style="font-size:0.95rem;">A warm introduction from you is worth 100 cold emails. Your clients trust your judgment — they'll take the meeting because you asked them to.</p>
+                        <h4 style="font-size:1.2rem;font-weight:700;margin-bottom:10px;">🤝 One Email Is All It Takes</h4>
+                        <p style="font-size:0.95rem;">Your clients trust your judgment. A warm introduction from you carries more weight than any cold pitch we could make. You send one email, we close the deal.</p>
                     </div>
                     <div class="pain-point-card">
-                        <h4 style="font-size:1.2rem;font-weight:700;margin-bottom:10px;">🏆 You Become the Hero</h4>
-                        <p style="font-size:0.95rem;">You solve their biggest operational headache and improve their cash flow — making their business healthier and your job easier.</p>
+                        <h4 style="font-size:1.2rem;font-weight:700;margin-bottom:10px;">🏆 You Look Like the Hero</h4>
+                        <p style="font-size:0.95rem;">You didn't just flag a problem — you brought the solution. Your client gets their time back, their cash flow improves, and their business can finally scale. And you earn while they grow.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ZERO EFFORT -->
+        <!-- WHAT YOU DON'T DO -->
         <section class="section section-light-bg">
             <div class="container">
-                <p class="section-label">⚡ Zero Effort</p>
-                <h2>What <span class="highlight">you don't</span> have to do.</h2>
+                <p class="section-label">Zero Work</p>
+                <h2>You make the introduction.<br><span class="highlight">We do absolutely everything else.</span></h2>
                 <div class="effort-grid">
                     <div class="effort-item"><span class="x">✕</span> You don't sell or close the deal</div>
                     <div class="effort-item"><span class="x">✕</span> You don't manage the VA team</div>
@@ -703,10 +341,10 @@
         <section class="section">
             <div class="container">
                 <div class="cta-section">
-                    <h2>Ready to turn your client list into recurring revenue?</h2>
-                    <p>Let's set up a 15-minute call. I'll walk you through the partnership, show you exactly how the introduction works, and answer any questions. No obligation.</p>
-                    <a href="#" class="btn btn-primary" onclick="alert('Replace with your Calendly link'); return false;">Book a 15-Min Call</a>
-                    <p class="cta-small">Or email waseem@ehyperise.com</p>
+                    <h2>Turn one email into $9,000 this year.<br>And every year after that.</h2>
+                    <p>Let's talk. We'll walk you through how the partnership works, show you exactly who to refer, and answer every question you have. No commitment. Just a conversation.</p>
+                    <a href="#" class="btn btn-primary" onclick="alert('Replace with your Calendly link'); return false;">Get My Partner Kit</a>
+                    <p class="cta-small">Or email waseem@ehyperise.com — we'll send you a one-page summary</p>
                 </div>
             </div>
         </section>
