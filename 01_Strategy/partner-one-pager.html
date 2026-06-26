@@ -67,10 +67,9 @@
         .pain-point-card { background: var(--pure-white); padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center; border: 1px solid #eee; }
         .pain-point-card .icon { font-size: 3rem; color: var(--vibrant-green); margin-bottom: 15px; }
         .pain-point-card h3 { font-size: 1.2rem; margin-bottom: 10px; }
-        .pain-point-card p { font-size: 0.95rem; }
 
         .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-top: 50px; align-items: center; }
-        .service-card { background: var(--pure-white); padding: 40px; border-radius: 8px; border: 1px solid #ddd; text-align: center; }
+        .service-card { background: var(--pure-white); padding: 40px; border-radius: 8px; border: 1px solid #ddd; }
         .service-card .service-number { font-size: 1.2rem; font-weight: 700; color: var(--vibrant-green); margin-bottom: 10px; }
         .service-card p { font-size: 0.95rem; }
 
@@ -80,7 +79,7 @@
         .value-prop-content p { font-size: 1.1rem; }
         .value-prop-content ul { list-style: none; margin-top: 20px; }
         .value-prop-content li { padding-left: 30px; position: relative; margin-bottom: 15px; }
-        .value-prop-content li::before { content: 'âœ“'; color: var(--vibrant-green); font-weight: 700; position: absolute; left: 0; top: 0; }
+        .value-prop-content li::before { content: '✓'; color: var(--vibrant-green); font-weight: 700; position: absolute; left: 0; top: 0; }
 
         .testimonial { max-width: 800px; margin: 0 auto; text-align: center; }
         .testimonial blockquote { font-size: 1.4rem; font-style: italic; line-height: 1.6; margin-bottom: 20px; color: #333; }
@@ -90,13 +89,10 @@
         .cta-section { background-color: var(--strong-black); color: var(--pure-white); border-radius: 10px; padding: 60px; text-align: center; }
         .cta-section h2 { color: var(--pure-white); }
         .cta-section p { max-width: 600px; margin: 0 auto 30px auto; }
-        .cta-section .btn-primary:hover { background-color: var(--pure-white); color: var(--strong-black); border-color: var(--vibrant-green); }
 
         .site-footer { padding: 50px 0; text-align: center; background-color: var(--light-grey-bg); }
         .site-footer .footer-logo img { max-width: 180px; height: auto; margin-bottom: 20px; }
         .site-footer p { font-size: 0.9rem; color: #555; margin: 0; }
-
-        .section-label { font-size: 0.85rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--vibrant-green); text-align: center; margin-bottom: 12px; }
 
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
@@ -105,8 +101,6 @@
             .value-prop .image-placeholder { height: 250px; order: -1; }
             .value-prop-content h2 { text-align: center; }
             .section { padding: 60px 0; }
-            .cta-section { border-radius: 0; }
-            .hero { padding: 60px 0; }
         }
     </style>
 </head>
@@ -116,8 +110,7 @@
         <!-- HERO -->
         <section class="hero">
             <div class="container">
-                <p class="section-label">Accountant & Bookkeeper Partnership</p>
-                <h1>Earn $750/month per client referral.<br><span class="highlight">You make the intro. We do everything else.</span></h1>
+                <h1>Earn $750<span class="highlight">/month</span> per client referral.<br>You make the intro. We do everything else.</h1>
                 <p class="sub-headline">
                     You have clients running on paper, chasing invoices weeks late, and working weekends just to keep up. Ehyperise builds the system that fixes it — a digital operating system with a dedicated VA team. You refer. We deliver. You earn 15% commission for life.
                 </p>
@@ -125,12 +118,11 @@
             </div>
         </section>
 
-        <!-- THE PROBLEM -->
+        <!-- PROBLEM -->
         <section class="section section-light-bg">
             <div class="container">
-                <p class="section-label">The Problem You See Every Day</p>
-                <h2>You have clients on your books who are<br><span class="highlight">one burnt-out admin away from disaster.</span></h2>
-                <p class="text-center" style="max-width: 700px; margin: 0 auto;">You see it in their P&amp;L. The cash tied up in receivables, the owner working 6-day weeks, the paper-based systems that haven't changed in years. They're drowning, and they don't even know it.</p>
+                <h2 class="text-center">You have clients on your books who are<br><span class="highlight">one burnt-out admin away from disaster.</span></h2>
+                <p class="text-center" style="max-width: 700px; margin: 0 auto;">You see it in their P&amp;L. The cash tied up in receivables, the owner working 6-day weeks, the paper-based systems that haven't changed in years.</p>
                 <div class="pain-points">
                     <div class="pain-point-card">
                         <div class="icon">💰</div>
@@ -140,142 +132,85 @@
                     <div class="pain-point-card">
                         <div class="icon">⏰</div>
                         <h3>Owner Burning Out</h3>
-                        <p>Working weekends, approving every job by phone, and no one to hand things off to. You've watched it get worse every quarter.</p>
+                        <p>Working weekends, approving every job by phone, no one to hand things off to. You've watched it get worse every quarter.</p>
                     </div>
                     <div class="pain-point-card">
                         <div class="icon">📄</div>
                         <h3>Paper Running the Show</h3>
-                        <p>Job cards, handwritten notes, spreadsheets from 2019. No system — just the owner's memory keeping it all together.</p>
+                        <p>Job cards, handwritten notes, spreadsheets from years ago. No system — just the owner's memory keeping it together.</p>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- HOW IT WORKS (SERVICES STYLE) -->
-        <section class="section">
+        
+        <!-- HOW IT WORKS -->
+        <section id="services" class="section">
             <div class="container">
-                <p class="section-label">How It Works</p>
-                <h2>You already have what we need.<br><span class="highlight">Your client list.</span></h2>
-                <p class="text-center" style="max-width: 700px; margin: 0 auto;">One email is all it takes to start earning. Here's exactly how the partnership works.</p>
+                <h2 class="text-center">You already have what we need.<br><span class="highlight">Your client list.</span></h2>
+                <p class="text-center" style="max-width: 700px; margin: 0 auto;">One email is all it takes. Here's exactly how the partnership works.</p>
                 <div class="services-grid">
                     <div class="service-card">
                         <div class="service-number">01</div>
                         <h3>Pick the Right Client</h3>
                         <p>You know exactly who's still on paper and working weekends. $1M+ revenue, 5–30 staff, family-run trade or service business. You see their P&amp;L — you already know who needs this.</p>
+                        <a href="#" class="btn btn-secondary" style="margin-top: 20px;" onclick="alert('Replace with Calendly link'); return false;">Refer a Client</a>
                     </div>
                     <div class="service-card">
                         <div class="service-number">02</div>
                         <h3>Send One Email</h3>
-                        <p>"I've come across a team that fixes the admin problem we keep talking about. Worth a 15-minute chat." That's it. We handle the rest from there.</p>
+                        <p>"I've come across a team that fixes the admin problem we keep talking about. Worth a 15-minute chat." That's it. We handle the rest — the sales call, the setup, the training, the ongoing management.</p>
+                        <a href="#" class="btn btn-secondary" style="margin-top: 20px;" onclick="alert('Replace with Calendly link'); return false;">Get Your Intro Kit</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- WHY YOU (VALUE PROP STYLE) -->
+        <!-- WHY YOU -->
         <section class="section section-light-bg">
             <div class="container">
                 <div class="value-prop">
-                    <div class="image-placeholder" style="background-color: var(--strong-black); color: var(--vibrant-green); flex-direction: column; gap: 15px;">
-                        <div style="font-size: 3rem;">15%</div>
-                        <div style="font-size: 1.1rem; font-weight: 400; color: var(--pure-white);">Lifetime Commission</div>
-                        <div style="font-size: 2.5rem; margin-top: 15px;">$750</div>
-                        <div style="font-size: 1.1rem; font-weight: 400; color: var(--pure-white);">Per Client / Month</div>
+                    <div class="image-placeholder" style="background-color: var(--strong-black); flex-direction: column; gap: 10px;">
+                        <div style="font-size: 3.5rem; font-weight: 700; color: var(--vibrant-green);">15%</div>
+                        <div style="font-size: 1.1rem; color: var(--pure-white); font-weight: 400;">Lifetime Commission</div>
+                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--vibrant-green); margin-top: 15px;">$750</div>
+                        <div style="font-size: 1.1rem; color: var(--pure-white); font-weight: 400;">Per Client / Month</div>
                     </div>
                     <div class="value-prop-content">
-                        <h2>Three reasons this works<br><span class="highlight">better than any referral program.</span></h2>
+                        <h2>Three reasons this works better<br><span class="highlight">than any referral program.</span></h2>
+                        <p>No cold outreach. No extra work. Just a warm introduction from you, and you earn while your client gets their time back.</p>
                         <ul>
-                            <li><strong>You Already Know Who Needs This.</strong> No cold outreach needed. You see their P&amp;L — you know who's sitting on $200k in receivables and bleeding payroll on inefficiency.</li>
-                            <li><strong>One Email Is All It Takes.</strong> Your clients trust your judgment. A warm introduction from you carries more weight than any cold pitch. You send one email, we close the deal.</li>
-                            <li><strong>You Look Like the Hero.</strong> You didn't just flag a problem — you brought the solution. Your client gets their time back and their business can finally scale. And you earn while they grow.</li>
+                            <li><strong>You Already Know Who Needs This.</strong> You see their P&L. No sales pitch needed — you already have the right clients in your books.</li>
+                            <li><strong>One Email Is All It Takes.</strong> Your clients trust you. A warm introduction carries more weight than any cold pitch. You send one email, we close the deal.</li>
+                            <li><strong>You Look Like the Hero.</strong> You didn't just flag a problem — you brought the solution. Your client gets their life back, and you earn while they grow.</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- WHAT YOU DON'T DO (SERVICES STYLE) -->
-        <section class="section">
+        
+        <!-- IDEAL CLIENT PROFILE -->
+        <section id="testimonial" class="section">
             <div class="container">
-                <p class="section-label">Zero Work For You</p>
-                <h2>You make the introduction.<br><span class="highlight">We do absolutely everything else.</span></h2>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <h3 style="color: var(--vibrant-green); font-size: 1.5rem; margin-bottom: 15px;">✕ You Don't Sell</h3>
-                        <p>We handle the entire sales process. Your only job is the introduction.</p>
-                    </div>
-                    <div class="service-card">
-                        <h3 style="color: var(--vibrant-green); font-size: 1.5rem; margin-bottom: 15px;">✕ You Don't Manage</h3>
-                        <p>We train and manage the VA team. You never lift a finger post-intro.</p>
-                    </div>
-                </div>
+                <h2 class="text-center">Who to refer.<br><span class="highlight">You already know them.</span></h2>
+                 <div class="testimonial">
+                    <blockquote>
+                        "$1M+ revenue, 5–30 employees, family-run trade or service business. Still running on paper and spreadsheets. Owner works 6-day weeks and approves every job personally. You see their cash tied up in 4-week-overdue invoices."
+                    </blockquote>
+                    <cite>
+                        Your Ideal Referral
+                        <span>You have at least 3 of these on your books right now.</span>
+                    </cite>
+                 </div>
             </div>
         </section>
-
-        <!-- COMMISSION TABLE (SERVICES STYLE EXTENDED) -->
-        <section class="section section-light-bg">
-            <div class="container">
-                <p class="section-label">The Numbers</p>
-                <h2>Five referrals = <span class="highlight">$45,000 a year in passive income.</span></h2>
-                <p class="text-center" style="max-width: 700px; margin: 0 auto 40px auto;">15% ongoing commission on every client you refer. Recurring, not one-off. No cap. No expiry.</p>
-                <div class="services-grid" style="max-width: 700px; margin: 0 auto;">
-                    <div class="service-card" style="text-align: left;">
-                        <p style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: #555; font-weight: 600; margin-bottom: 5px;">1 Client</p>
-                        <p style="font-size: 1.8rem; font-weight: 700; color: var(--vibrant-green); margin: 0;">$750<span style="font-size: 1rem; font-weight: 400; color: #555;">/mo</span></p>
-                        <p style="font-size: 0.9rem; color: #555; margin: 5px 0 0;">$9,000 / year</p>
-                    </div>
-                    <div class="service-card" style="text-align: left;">
-                        <p style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: #555; font-weight: 600; margin-bottom: 5px;">3 Clients</p>
-                        <p style="font-size: 1.8rem; font-weight: 700; color: var(--vibrant-green); margin: 0;">$2,250<span style="font-size: 1rem; font-weight: 400; color: #555;">/mo</span></p>
-                        <p style="font-size: 0.9rem; color: #555; margin: 5px 0 0;">$27,000 / year</p>
-                    </div>
-                    <div class="service-card" style="text-align: left;">
-                        <p style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: #555; font-weight: 600; margin-bottom: 5px;">5 Clients</p>
-                        <p style="font-size: 1.8rem; font-weight: 700; color: var(--vibrant-green); margin: 0;">$3,750<span style="font-size: 1rem; font-weight: 400; color: #555;">/mo</span></p>
-                        <p style="font-size: 0.9rem; color: #555; margin: 5px 0 0;">$45,000 / year</p>
-                    </div>
-                    <div class="service-card" style="text-align: left;">
-                        <p style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: #555; font-weight: 600; margin-bottom: 5px;">10 Clients</p>
-                        <p style="font-size: 1.8rem; font-weight: 700; color: var(--vibrant-green); margin: 0;">$7,500<span style="font-size: 1rem; font-weight: 400; color: #555;">/mo</span></p>
-                        <p style="font-size: 0.9rem; color: #555; margin: 5px 0 0;">$90,000 / year</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- IDEAL CLIENT (TESTIMONIAL STYLE) -->
-        <section class="section">
-            <div class="container">
-                <p class="section-label">Who To Refer</p>
-                <h2>These are the clients<br><span class="highlight">you already worry about.</span></h2>
-                <div class="testimonial">
-                    <p style="font-size: 1.1rem; margin-bottom: 30px;">Trade and service businesses you already have on your books — $1M+ revenue, family-run, and running on paper and memory.</p>
-                    <div class="services-grid" style="margin-top: 0;">
-                        <div class="service-card" style="padding: 20px; text-align: center;">
-                            <p style="font-weight: 600; margin: 0;">💰 $1M+ rev, no systems</p>
-                        </div>
-                        <div class="service-card" style="padding: 20px; text-align: center;">
-                            <p style="font-weight: 600; margin: 0;">📄 Running on paper/spreadsheets</p>
-                        </div>
-                        <div class="service-card" style="padding: 20px; text-align: center;">
-                            <p style="font-weight: 600; margin: 0;">👥 5–30 employees, family-run</p>
-                        </div>
-                        <div class="service-card" style="padding: 20px; text-align: center;">
-                            <p style="font-weight: 600; margin: 0;">📞 Owner approves every job</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
+        
         <!-- CTA -->
-        <section class="section">
+        <section id="contact" class="section">
             <div class="container">
                 <div class="cta-section">
                     <h2>Turn one email into $9,000 this year.<br>And every year after that.</h2>
                     <p>Let's talk. We'll walk you through how the partnership works, show you exactly who to refer, and answer every question. No commitment. Just a conversation.</p>
                     <a href="#" class="btn btn-primary" onclick="alert('Replace with your Calendly link'); return false;">Get My Partner Kit</a>
-                    <p style="font-size: 0.85rem; color: #aaa; margin-top: 20px;">Or email waseem@ehyperise.com — we'll send you a one-page summary</p>
                 </div>
             </div>
         </section>
