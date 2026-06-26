@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ehyperise — Accounting Partner Program</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap');
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: #1a1a2e;
+    background: #f8f9fc;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ===== PAGE WRAPPER ===== */
+  .page {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #ffffff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+    padding: 64px 64px 56px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(99,102,241,0.08) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero-content { position: relative; z-index: 1; }
+
+  .badge {
+    display: inline-block;
+    background: rgba(99,102,241,0.15);
+    color: #a5b4fc;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(99,102,241,0.2);
+  }
+
+  .hero h1 {
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1.2;
+    max-width: 750px;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+  }
+  .hero h1 span { color: #a5b4fc; }
+
+  .hero p {
+    font-size: 17px;
+    color: #94a3b8;
+    max-width: 600px;
+    margin-bottom: 28px;
+    line-height: 1.7;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 32px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(148,163,184,0.15);
+  }
+  .hero-stat h2 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #a5b4fc;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .hero-stat p {
+    font-size: 13px;
+    color: #64748b;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+  }
+
+  /* ===== SECTION ===== */
+  .section {
+    padding: 48px 64px;
+  }
+  .section-alt { background: #f8f9fc; }
+
+  .section-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #6366f1;
+    margin-bottom: 12px;
+  }
+  .section h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 24px;
+    letter-spacing: -0.3px;
+    line-height: 1.3;
+  }
+  .section h2 span { color: #6366f1; }
+
+  /* ===== PROBLEM / SOLUTION ===== */
+  .split-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .split-card {
+    padding: 28px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+  }
+  .split-card.problem { background: #fef2f2; border-color: #fecaca; }
+  .split-card.solution { background: #f0fdf4; border-color: #bbf7d0; }
+
+  .split-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .split-card.problem h3 { color: #dc2626; }
+  .split-card.solution h3 { color: #16a34a; }
+
+  .split-card p, .split-card li {
+    font-size: 14px;
+    color: #475569;
+    line-height: 1.7;
+  }
+  .split-card ul { list-style: none; padding: 0; }
+  .split-card ul li {
+    padding: 6px 0;
+    padding-left: 20px;
+    position: relative;
+  }
+  .split-card.problem ul li::before {
+    content: '✕';
+    position: absolute; left: 0;
+    color: #f87171;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .split-card.solution ul li::before {
+    content: '✓';
+    position: absolute; left: 0;
+    color: #4ade80;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  /* ===== HOW IT WORKS ===== */
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 8px;
+  }
+  .step {
+    text-align: center;
+    padding: 28px 20px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    background: #fff;
+    position: relative;
+  }
+  .step-num {
+    width: 40px; height: 40px;
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 16px;
+  }
+  .step h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 8px;
+  }
+  .step p {
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.6;
+  }
+
+  /* ===== COMMISSION TABLE ===== */
+  .commission-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .commission-header {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: #fff;
+    padding: 20px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .commission-header h3 {
+    font-size: 17px;
+    font-weight: 700;
+  }
+  .commission-header .rate {
+    font-size: 28px;
+    font-weight: 800;
+    color: #a5b4fc;
+  }
+  .commission-body { padding: 24px 28px; }
+  .commission-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  .commission-table th {
+    text-align: left;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #64748b;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .commission-table td {
+    padding: 14px 0;
+    border-bottom: 1px solid #f1f5f9;
+    color: #334155;
+  }
+  .commission-table tr:last-child td { border: none; }
+  .commission-table .highlight {
+    font-weight: 700;
+    color: #6366f1;
+  }
+
+  .commission-note {
+    margin-top: 16px;
+    padding: 12px 20px;
+    background: #f0fdf4;
+    border-left: 3px solid #22c55e;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #166534;
+    line-height: 1.6;
+  }
+
+  /* ===== CLIENT PROFILE ===== */
+  .profile-box {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 28px;
+  }
+  .profile-box h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 16px;
+  }
+  .profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .profile-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    background: #f8f9fc;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #334155;
+    font-weight: 500;
+  }
+  .profile-item .icon { font-size: 16px; }
+
+  /* ===== CTA ===== */
+  .cta-section {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+    padding: 48px 64px;
+    text-align: center;
+    color: #fff;
+  }
+  .cta-section h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .cta-section p {
+    color: #94a3b8;
+    font-size: 15px;
+    max-width: 500px;
+    margin: 0 auto 28px;
+    line-height: 1.7;
+  }
+  .cta-button {
+    display: inline-block;
+    background: #6366f1;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 14px 36px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+  }
+  .cta-button:hover { background: #4f46e5; transform: translateY(-1px); }
+
+  .cta-section .small {
+    margin-top: 16px;
+    font-size: 12px;
+    color: #64748b;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    padding: 24px 64px;
+    text-align: center;
+    font-size: 12px;
+    color: #94a3b8;
+    border-top: 1px solid #e2e8f0;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media print {
+    body { background: #fff; }
+    .page { box-shadow: none; }
+  }
+  @media (max-width: 768px) {
+    .hero { padding: 40px 24px; }
+    .hero h1 { font-size: 26px; }
+    .hero-stats { flex-direction: column; gap: 16px; }
+    .section { padding: 32px 24px; }
+    .split-grid { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr; }
+    .profile-grid { grid-template-columns: 1fr; }
+    .cta-section { padding: 40px 24px; }
+    .commission-header { flex-direction: column; gap: 8px; text-align: center; }
+    .footer { padding: 20px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ===== HERO ===== -->
+  <div class="hero">
+    <div class="hero-content">
+      <div class="badge">⚡ Strategic Partnership</div>
+      <h1>Turn Your Tradie Clients' Admin Nightmare Into a <span>Recurring Revenue Stream</span> — Without Lifting a Finger</h1>
+      <p>Introducing the Ehyperise partnership for accounting firms. You identify the clients drowning in paper. We build the system that saves them. You earn 15% ongoing commission on every client you refer.</p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <h2>$270k</h2>
+          <p>Average annual waste per tradie business</p>
+        </div>
+        <div class="hero-stat">
+          <h2>15%</h2>
+          <p>Ongoing monthly commission — for life</p>
+        </div>
+        <div class="hero-stat">
+          <h2>$750</h2>
+          <p>Monthly commission per client referred</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== PROBLEM / SOLUTION ===== -->
+  <div class="section">
+    <div class="section-label">⚡ The Opportunity</div>
+    <h2>Your clients are bleeding cash on admin. <span>They just don't see it.</span></h2>
+    <div class="split-grid">
+      <div class="split-card problem">
+        <h3>What They're Living With</h3>
+        <ul>
+          <li>5–6 week invoicing lag = ~$250k in uncollected revenue at all times</li>
+          <li>Plumbers waste 20min per job waiting for phone approvals — $190k/yr lost</li>
+          <li>Founder works Sundays to keep the business afloat</li>
+          <li>25-year reputation running on paper job cards and head knowledge</li>
+        </ul>
+      </div>
+      <div class="split-card solution">
+        <h3>What Ehyperise Delivers</h3>
+        <ul>
+          <li>Invoicing within 24 hours — cash gap closed from weeks to days</li>
+          <li>Digital work orders, no phone approvals needed — $190k recovered</li>
+          <li>3-person VA team handles all admin — founder gets his Sundays back</li>
+          <li>Company Brain captures every procedure — the business survives its founder</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <div class="section section-alt">
+    <div class="section-label">⚡ For Your Firm</div>
+    <h2>Three steps to <span>effortless recurring income.</span></h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>Identify</h4>
+        <p>You know which clients are $1M+ revenue, still drowning in paper, and working weekends. You already have the list.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>Introduce</h4>
+        <p>A warm email or 2-min call from you is all it takes. "I've found a team that fixes your admin problem for good."</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>Earn</h4>
+        <p>We close, deliver, and manage everything. You collect <strong>15% monthly commission</strong> for the life of every client you refer.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== COMMISSION STRUCTURE ===== -->
+  <div class="section">
+    <div class="section-label">⚡ The Numbers</div>
+    <h2>What <span>15% ongoing</span> looks like in your pocket.</h2>
+    <div class="commission-card">
+      <div class="commission-header">
+        <h3>Commission Structure</h3>
+        <div class="rate">15%</div>
+      </div>
+      <div class="commission-body">
+        <table class="commission-table">
+          <tr>
+            <th>Clients Referred</th>
+            <th>Your Monthly Commission</th>
+            <th>Annual Partner Revenue</th>
+          </tr>
+          <tr>
+            <td>1 client</td>
+            <td class="highlight">$750/mo</td>
+            <td>$9,000/yr</td>
+          </tr>
+          <tr>
+            <td>3 clients</td>
+            <td class="highlight">$2,250/mo</td>
+            <td>$27,000/yr</td>
+          </tr>
+          <tr>
+            <td>5 clients</td>
+            <td class="highlight">$3,750/mo</td>
+            <td>$45,000/yr</td>
+          </tr>
+          <tr>
+            <td>10 clients</td>
+            <td class="highlight">$7,500/mo</td>
+            <td>$90,000/yr</td>
+          </tr>
+        </table>
+        <div class="commission-note">
+          <strong>No cap, no expiry.</strong> You earn 15% of the monthly managed fee for every client you refer — as long as they're a client. If your client grows and upgrades their plan, your commission grows with them. No effort required after the introduction.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== IDEAL CLIENT PROFILE ===== -->
+  <div class="section section-alt">
+    <div class="section-label">⚡ Who To Look For</div>
+    <h2>The ideal client is probably <span>already on your books.</span></h2>
+    <div class="profile-box">
+      <h3>Your Perfect Referral</h3>
+      <div class="profile-grid">
+        <div class="profile-item"><span class="icon">💰</span> $1.5M+ annual revenue</div>
+        <div class="profile-item"><span class="icon">📄</span> Still using paper job cards</div>
+        <div class="profile-item"><span class="icon">👨‍👩‍👧‍👦</span> Family-run, 10–30 employees</div>
+        <div class="profile-item"><span class="icon">📞</span> Owner approves every job by phone</div>
+        <div class="profile-item"><span class="icon">💳</span> Chasing invoices 5+ weeks late</div>
+        <div class="profile-item"><span class="icon">📅</span> Owner works 6+ days a week</div>
+        <div class="profile-item"><span class="icon">🛠️</span> Plumbing, electrical, or building</div>
+        <div class="profile-item"><span class="icon">😤</span> "Too busy to fix the admin"</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== WHY ACCOUNTANTS ===== -->
+  <div class="section">
+    <div class="section-label">⚡ Why Your Firm?</div>
+    <h2>You already have the trust. <span>We bring the fix.</span></h2>
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px;">
+      <div style="padding: 20px; border-radius: 10px; border: 1px solid #e2e8f0;">
+        <h4 style="font-size: 14px; font-weight: 700; color: #0f172a; margin-bottom: 8px;">🔍 You See the Books</h4>
+        <p style="font-size: 13px; color: #64748b; line-height: 1.6;">You know which clients have $200k+ sitting in receivables. You see the admin waste in their P&L. You're the only one who knows.</p>
+      </div>
+      <div style="padding: 20px; border-radius: 10px; border: 1px solid #e2e8f0;">
+        <h4 style="font-size: 14px; font-weight: 700; color: #0f172a; margin-bottom: 8px;">🤝 You Have the Relationship</h4>
+        <p style="font-size: 13px; color: #64748b; line-height: 1.6;">A warm introduction from you is worth 100 cold emails. Your clients trust your judgment — they'll take the meeting.</p>
+      </div>
+      <div style="padding: 20px; border-radius: 10px; border: 1px solid #e2e8f0;">
+        <h4 style="font-size: 14px; font-weight: 700; color: #0f172a; margin-bottom: 8px;">🏆 You Become the Hero</h4>
+        <p style="font-size: 13px; color: #64748b; line-height: 1.6;">Not only do you solve their biggest operational headache — you also improve their cash flow, making your own job easier.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== WHAT YOU DON'T DO ===== -->
+  <div class="section section-alt">
+    <div class="section-label">⚡ Zero Effort From You</div>
+    <h2>What <span>you don't</span> have to do.</h2>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+      <div style="display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: #fff; border-radius: 8px; border: 1px solid #e2e8f0;">
+        <span style="color: #22c55e; font-weight: 700;">✕</span>
+        <span style="font-size: 13px; color: #475569;">You don't sell or close the deal</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: #fff; border-radius: 8px; border: 1px solid #e2e8f0;">
+        <span style="color: #22c55e; font-weight: 700;">✕</span>
+        <span style="font-size: 13px; color: #475569;">You don't manage the VA team</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: #fff; border-radius: 8px; border: 1px solid #e2e8f0;">
+        <span style="color: #22c55e; font-weight: 700;">✕</span>
+        <span style="font-size: 13px; color: #475569;">You don't handle setup or training</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: #fff; border-radius: 8px; border: 1px solid #e2e8f0;">
+        <span style="color: #22c55e; font-weight: 700;">✕</span>
+        <span style="font-size: 13px; color: #475569;">You don't support the client post-launch</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CTA ===== -->
+  <div class="cta-section">
+    <h2>Ready to turn your client list into recurring revenue?</h2>
+    <p>Let's set up a 15-minute call. I'll share exactly how the partnership works, show you a sample client pitch you can send today, and answer any questions.</p>
+    <a href="#" class="cta-button" onclick="alert('Replace this with your actual contact link or email. Suggested: mailto:waseem@ehyperise.com or a calendly link.'); return false;">Book a 15-Min Call</a>
+    <p class="small">Or email waseem@ehyperise.com • No obligation. No commitment. Just a conversation.</p>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <div class="footer">
+    <p><strong>Ehyperise</strong> — Digital Transformation for Trade & Service Businesses. Made in Sydney, Australia.</p>
+  </div>
+
+</div>
+
+</body>
+</html>
