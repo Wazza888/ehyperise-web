@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ehyperise | Digital Marketing & Business Systems for Freedom</title>
+    <meta name="description" content="Stop working in your business and start leading it. Ehyperise combines digital marketing with business systemisation to grow your revenue and give you back your time.">
+    
+    <style>
+        /* --- Google Fonts --- */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+        /* --- CSS Variables (NEW Color Palette) --- */
+        :root {
+            --strong-black: #000000;
+            --vibrant-green: #61CE70;
+            --warm-yellow: #F9CB40;
+            --light-grey-bg: #F2F2F2;
+            --pure-white: #FFFFFF;
+        }
+
+        /* --- Global Reset & Base Styles --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--strong-black);
+            background-color: var(--pure-white);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        /* --- Utility Classes --- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-light-bg {
+            background-color: var(--light-grey-bg);
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+        
+        .highlight {
+            color: var(--vibrant-green);
+        }
+
+        /* --- Buttons --- */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background-color: var(--vibrant-green);
+            color: var(--strong-black);
+            font-weight: 700;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--pure-white);
+            color: var(--strong-black);
+            border-color: var(--vibrant-green);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--strong-black);
+            border-color: var(--strong-black);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--strong-black);
+            color: var(--pure-white);
+        }
+        
+        /* --- Hero Section --- */
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero .sub-headline {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+            color: var(--strong-black);
+        }
+
+        /* --- Pain Point Section --- */
+        .pain-points {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .pain-point-card {
+            background: var(--pure-white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            border: 1px solid #eee;
+        }
+
+        .pain-point-card .icon {
+            font-size: 3rem;
+            color: var(--vibrant-green);
+            margin-bottom: 15px;
+        }
+        
+        .pain-point-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        /* --- Services Section --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 50px;
+            align-items: center;
+        }
+
+        .service-card {
+            background: var(--pure-white);
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+
+        .service-card .service-number {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--vibrant-green);
+            margin-bottom: 10px;
+        }
+        
+        .service-card p {
+            font-size: 0.95rem;
+        }
+
+        /* --- Value Proposition Section --- */
+        .value-prop {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .value-prop .image-placeholder {
+            width: 100%;
+            height: 400px;
+            background-color: var(--vibrant-green);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--strong-black);
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .value-prop-content h2 {
+            text-align: left;
+        }
+        
+        .value-prop-content p {
+            font-size: 1.1rem;
+        }
+        
+        .value-prop-content ul {
+            list-style: none;
+            margin-top: 20px;
+        }
+        
+        .value-prop-content li {
+            padding-left: 30px;
+            position: relative;
+            margin-bottom: 15px;
+        }
+        
+        .value-prop-content li::before {
+            content: '✓';
+            color: var(--vibrant-green);
+            font-weight: 700;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        
+        /* --- Testimonial Section --- */
+        .testimonial {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .testimonial blockquote {
+            font-size: 1.4rem;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .testimonial cite {
+            font-weight: 600;
+            font-style: normal;
+        }
+        
+        .testimonial cite span {
+            display: block;
+            font-weight: 400;
+            color: var(--strong-black);
+            font-size: 0.9rem;
+        }
+
+        /* --- Final CTA Section --- */
+        .cta-section {
+            background-color: var(--strong-black);
+            color: var(--pure-white);
+            border-radius: 10px;
+            padding: 60px;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            color: var(--pure-white);
+        }
+
+        .cta-section p {
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+        
+        /* --- Footer --- */
+        .site-footer {
+            padding: 50px 0;
+            text-align: center;
+            background-color: var(--light-grey-bg);
+        }
+
+        .site-footer .footer-logo img {
+            max-width: 180px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        
+        .site-footer p {
+            font-size: 0.9rem;
+            color: #555;
+            margin: 0;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            
+            .pain-points, .services-grid, .value-prop {
+                grid-template-columns: 1fr;
+            }
+
+            .value-prop .image-placeholder {
+                height: 250px;
+                order: -1; /* Move image to top on mobile */
+            }
+
+            .value-prop-content h2 {
+                text-align: center;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Stop Working <span class="highlight">In</span> Your Business.<br>Start Leading It.</h1>
+                <p class="sub-headline">
+                    We combine data-driven digital marketing with concierge business systems to grow your revenue and reclaim your freedom. It's not a fantasy.
+                </p>
+                <a href="https://ehyperise.com/contact/" class="btn btn-primary">Reclaim Your Freedom</a>
+            </div>
+        </section>
+
+        <section class="section section-light-bg">
+            <div class="container">
+                <h2 class="text-center">Tired of being the bottleneck?</h2>
+                <p class="text-center" style="max-width: 700px; margin: 0 auto;">You built your business for freedom, but now you're trapped by its success. If this sounds familiar, you're in the right place.</p>
+                <div class="pain-points">
+                    <div class="pain-point-card">
+                        <div class="icon">🤯</div>
+                        <h3>Overwhelmed & Time-Poor</h3>
+                        <p>Constantly firefighting, wearing too many hats, and pulled in a million directions at once.</p>
+                    </div>
+                    <div class="pain-point-card">
+                        <div class="icon">📈</div>
+                        <h3>Stagnant Growth</h3>
+                        <p>You know you can grow more, but you're too buried in daily operations to think strategically.</p>
+                    </div>
+                    <div class="pain-point-card">
+                        <div class="icon">📞</div>
+                        <h3>Team Dependency</h3>
+                        <p>Every important decision, question, and client issue still has to go through you.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="services" class="section">
+            <div class="container">
+                <h2 class="text-center">Two Paths to Liberation</h2>
+                <p class="text-center" style="max-width: 700px; margin: 0 auto;">We get you more customers with digital marketing, and we get you your time back by systemising your business. Your choice.</p>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-number">01</div>
+                        <h3>Digital Marketing Services</h3>
+                        <p>For when you need more leads and sales, but don't have time to manage campaigns. We build and manage marketing that actually works, so you can stop worrying about where the next customer is coming from.</p>
+                        <a href="https://ehyperise.com/digital-marketing-services/" class="btn btn-secondary" style="margin-top: 20px;">See Marketing Plans</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-number">02</div>
+                        <h3>Business Systemisation</h3>
+                        <p>For when you're sick of being the go-to person for every problem. We document your processes so your team knows exactly what to do, allowing you to finally step back and lead.</p>
+                        <a href="https://ehyperise.com/business-freedom-formula/" class="btn btn-secondary" style="margin-top: 20px;">Learn About Systems</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-light-bg">
+            <div class="container">
+                <div class="value-prop">
+                    <div class="image-placeholder">
+                        Your Team, Empowered.
+                    </div>
+                    <div class="value-prop-content">
+                        <h2>Your Partner in <span class="highlight">Liberation</span></h2>
+                        <p>Ehyperise is not just another agency. We are your strategic partner. We combine data-driven marketing with bespoke business systemisation to not only grow your revenue, but to remove you as the bottleneck.</p>
+                        <ul>
+                            <li><strong>Get Relief:</strong> Hand off the complex tasks you don't have time for.</li>
+                            <li><strong>Gain Control:</strong> Know your business can run smoothly without you.</li>
+                            <li><strong>Feel Confident:</strong> Make strategic decisions backed by clear data and robust systems.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="testimonial" class="section">
+            <div class="container">
+                 <div class="testimonial">
+                    <blockquote>
+                        "Working with them was the first time I felt like I could finally take a real holiday. My business ran smoothly, and we had our best sales month while I was away. It was liberating."
+                    </blockquote>
+                    <cite>
+                        Sarah C., Founder & MD
+                        <span>Thriving Digital Design Agency, Sydney</span>
+                    </cite>
+                 </div>
+            </div>
+        </section>
+        
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="cta-section">
+                    <h2>Sound like what you need?</h2>
+                    <p>You don't have to keep feeling stuck. Let's have a quick, no-pressure chat to see if we’re a good fit. Tell us what’s keeping you up at night, and we’ll tell you straight if and how we can help.</p>
+                    <a href="https://ehyperise.com/contact/" class="btn btn-primary">Book a Free Chat Now</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-logo">
+                <img src="http://ehyperise.com/wp-content/uploads/2020/12/cropped-logos.png" alt="Ehyperise Logo">
+            </div>
+            <p>Copyright © 2025 Ehyperise | Powered by Ehyperise</p>
+        </div>
+    </footer>
+
+</body>
+</html>
