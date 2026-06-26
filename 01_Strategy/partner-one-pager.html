@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ehyperise — Accounting Partner Program</title>
+<title>Ehyperise — Partner Program for Accountants & Bookkeepers</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -17,7 +17,6 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  /* ===== PAGE WRAPPER ===== */
   .page {
     max-width: 1000px;
     margin: 0 auto;
@@ -171,6 +170,32 @@
     font-weight: 700;
   }
 
+  /* ===== WHAT WE DO ===== */
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 8px;
+  }
+  .pillar {
+    padding: 24px 20px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    background: #fff;
+  }
+  .pillar-icon { font-size: 28px; margin-bottom: 12px; }
+  .pillar h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 8px;
+  }
+  .pillar p {
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.6;
+  }
+
   /* ===== HOW IT WORKS ===== */
   .steps {
     display: grid;
@@ -301,6 +326,30 @@
   }
   .profile-item .icon { font-size: 16px; }
 
+  /* ===== WHY ACCOUNTANTS ===== */
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+  .why-card {
+    padding: 24px 20px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    background: #fff;
+  }
+  .why-card h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 8px;
+  }
+  .why-card p {
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.6;
+  }
+
   /* ===== CTA ===== */
   .cta-section {
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
@@ -360,8 +409,7 @@
     .hero h1 { font-size: 26px; }
     .hero-stats { flex-direction: column; gap: 16px; }
     .section { padding: 32px 24px; }
-    .split-grid { grid-template-columns: 1fr; }
-    .steps { grid-template-columns: 1fr; }
+    .split-grid, .pillars, .steps, .why-grid { grid-template-columns: 1fr; }
     .profile-grid { grid-template-columns: 1fr; }
     .cta-section { padding: 40px 24px; }
     .commission-header { flex-direction: column; gap: 8px; text-align: center; }
@@ -376,21 +424,21 @@
   <!-- ===== HERO ===== -->
   <div class="hero">
     <div class="hero-content">
-      <div class="badge">⚡ Strategic Partnership</div>
-      <h1>Turn Your Tradie Clients' Admin Nightmare Into a <span>Recurring Revenue Stream</span> — Without Lifting a Finger</h1>
-      <p>Introducing the Ehyperise partnership for accounting firms. You identify the clients drowning in paper. We build the system that saves them. You earn 15% ongoing commission on every client you refer.</p>
+      <div class="badge">⚡ Partner Program</div>
+      <h1>Your clients are drowning in admin. <span>We fix it. You earn recurring commission.</span></h1>
+      <p>Introducing the Ehyperise partner program for accountants and bookkeepers. Spot the businesses on your books still running on paper and spreadsheets. We build the system that saves them. You earn 15% ongoing commission on every client you refer — for life.</p>
       <div class="hero-stats">
         <div class="hero-stat">
-          <h2>$270k</h2>
-          <p>Average annual waste per tradie business</p>
-        </div>
-        <div class="hero-stat">
           <h2>15%</h2>
-          <p>Ongoing monthly commission — for life</p>
+          <p>Ongoing monthly commission</p>
         </div>
         <div class="hero-stat">
           <h2>$750</h2>
-          <p>Monthly commission per client referred</p>
+          <p>Monthly commission per client</p>
+        </div>
+        <div class="hero-stat">
+          <h2>$0</h2>
+          <p>Effort from you after the intro</p>
         </div>
       </div>
     </div>
@@ -399,54 +447,79 @@
   <!-- ===== PROBLEM / SOLUTION ===== -->
   <div class="section">
     <div class="section-label">⚡ The Opportunity</div>
-    <h2>Your clients are bleeding cash on admin. <span>They just don't see it.</span></h2>
+    <h2>Your trade & service clients are bleeding time and money. <span>They just don't see it.</span></h2>
     <div class="split-grid">
       <div class="split-card problem">
         <h3>What They're Living With</h3>
         <ul>
-          <li>5–6 week invoicing lag = ~$250k in uncollected revenue at all times</li>
-          <li>Plumbers waste 20min per job waiting for phone approvals — $190k/yr lost</li>
-          <li>Founder works Sundays to keep the business afloat</li>
-          <li>25-year reputation running on paper job cards and head knowledge</li>
+          <li>5–6 week invoicing lag — cash tied up in receivables for months</li>
+          <li>Staff waiting for phone approvals — burning payroll on idle time</li>
+          <li>Owner working weekends just to keep the business afloat</li>
+          <li>Decades of reputation running on paper job cards and head knowledge</li>
+          <li>No system to scale — every new hire means starting from scratch</li>
         </ul>
       </div>
       <div class="split-card solution">
         <h3>What Ehyperise Delivers</h3>
         <ul>
           <li>Invoicing within 24 hours — cash gap closed from weeks to days</li>
-          <li>Digital work orders, no phone approvals needed — $190k recovered</li>
-          <li>3-person VA team handles all admin — founder gets his Sundays back</li>
-          <li>Company Brain captures every procedure — the business survives its founder</li>
+          <li>Digital work orders and approvals — no more phone tag</li>
+          <li>3-person VA team handles all admin — owner gets their time back</li>
+          <li>Company Brain captures every procedure — the business can scale</li>
+          <li>Fixed monthly cost — predictable, no surprises, no overhead</li>
         </ul>
       </div>
     </div>
   </div>
 
-  <!-- ===== HOW IT WORKS ===== -->
+  <!-- ===== WHAT WE DO ===== -->
   <div class="section section-alt">
+    <div class="section-label">⚡ What We Do</div>
+    <h2>We build the operating system for <span>trade & service businesses.</span></h2>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-icon">📋</div>
+        <h4>Digital Field Operations</h4>
+        <p>Auto job cards, digital approvals, mandatory before/after photos, and a searchable archive of every job — all in one system.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">🧠</div>
+        <h4>The Company Brain</h4>
+        <p>A searchable wiki of every rule, procedure, and standard. A training academy so new hires represent the brand exactly as the founder does.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">👥</div>
+        <h4>Managed Admin Team</h4>
+        <p>A dedicated VA team handling invoicing, scheduling, dispatch, and client follow-ups. We train, manage, and retain them — the client does nothing.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <div class="section">
     <div class="section-label">⚡ For Your Firm</div>
     <h2>Three steps to <span>effortless recurring income.</span></h2>
     <div class="steps">
       <div class="step">
         <div class="step-num">1</div>
         <h4>Identify</h4>
-        <p>You know which clients are $1M+ revenue, still drowning in paper, and working weekends. You already have the list.</p>
+        <p>You know which clients are still on paper, working weekends, and can't seem to scale. You already have the list — you see their P&amp;L.</p>
       </div>
       <div class="step">
         <div class="step-num">2</div>
         <h4>Introduce</h4>
-        <p>A warm email or 2-min call from you is all it takes. "I've found a team that fixes your admin problem for good."</p>
+        <p>A warm email or 2-minute call from you is all it takes. "I've found a team that fixes your admin problem for good — let me connect you."</p>
       </div>
       <div class="step">
         <div class="step-num">3</div>
         <h4>Earn</h4>
-        <p>We close, deliver, and manage everything. You collect <strong>15% monthly commission</strong> for the life of every client you refer.</p>
+        <p>We close, deliver, and manage everything. You collect <strong>15% monthly commission</strong> for the life of every client you refer. No cap, no expiry.</p>
       </div>
     </div>
   </div>
 
   <!-- ===== COMMISSION STRUCTURE ===== -->
-  <div class="section">
+  <div class="section section-alt">
     <div class="section-label">⚡ The Numbers</div>
     <h2>What <span>15% ongoing</span> looks like in your pocket.</h2>
     <div class="commission-card">
@@ -483,71 +556,79 @@
           </tr>
         </table>
         <div class="commission-note">
-          <strong>No cap, no expiry.</strong> You earn 15% of the monthly managed fee for every client you refer — as long as they're a client. If your client grows and upgrades their plan, your commission grows with them. No effort required after the introduction.
+          <strong>No cap, no expiry, no effort.</strong> You earn 15% of the monthly managed fee for every client you refer — as long as they're a client. If your client grows and upgrades their plan, your commission grows with them. All you do is make the introduction.
         </div>
       </div>
     </div>
   </div>
 
   <!-- ===== IDEAL CLIENT PROFILE ===== -->
-  <div class="section section-alt">
+  <div class="section">
     <div class="section-label">⚡ Who To Look For</div>
-    <h2>The ideal client is probably <span>already on your books.</span></h2>
+    <h2>Your ideal referral is probably <span>already on your books.</span></h2>
     <div class="profile-box">
       <h3>Your Perfect Referral</h3>
       <div class="profile-grid">
-        <div class="profile-item"><span class="icon">💰</span> $1.5M+ annual revenue</div>
-        <div class="profile-item"><span class="icon">📄</span> Still using paper job cards</div>
-        <div class="profile-item"><span class="icon">👨‍👩‍👧‍👦</span> Family-run, 10–30 employees</div>
-        <div class="profile-item"><span class="icon">📞</span> Owner approves every job by phone</div>
-        <div class="profile-item"><span class="icon">💳</span> Chasing invoices 5+ weeks late</div>
+        <div class="profile-item"><span class="icon">💰</span> $1M+ annual revenue</div>
+        <div class="profile-item"><span class="icon">📄</span> Still running on paper or spreadsheets</div>
+        <div class="profile-item"><span class="icon">👥</span> 5–30 employees, family-run</div>
+        <div class="profile-item"><span class="icon">📞</span> Owner approves every job personally</div>
+        <div class="profile-item"><span class="icon">💳</span> Chasing invoices 4+ weeks overdue</div>
         <div class="profile-item"><span class="icon">📅</span> Owner works 6+ days a week</div>
-        <div class="profile-item"><span class="icon">🛠️</span> Plumbing, electrical, or building</div>
-        <div class="profile-item"><span class="icon">😤</span> "Too busy to fix the admin"</div>
+        <div class="profile-item"><span class="icon">🛠️</span> Trade, service, or construction</div>
+        <div class="profile-item"><span class="icon">😤</span> "I'm too busy to fix the admin"</div>
       </div>
     </div>
   </div>
 
   <!-- ===== WHY ACCOUNTANTS ===== -->
-  <div class="section">
-    <div class="section-label">⚡ Why Your Firm?</div>
+  <div class="section section-alt">
+    <div class="section-label">⚡ Why Partner With Us?</div>
     <h2>You already have the trust. <span>We bring the fix.</span></h2>
-    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px;">
-      <div style="padding: 20px; border-radius: 10px; border: 1px solid #e2e8f0;">
-        <h4 style="font-size: 14px; font-weight: 700; color: #0f172a; margin-bottom: 8px;">🔍 You See the Books</h4>
-        <p style="font-size: 13px; color: #64748b; line-height: 1.6;">You know which clients have $200k+ sitting in receivables. You see the admin waste in their P&L. You're the only one who knows.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <h4>🔍 You See What They Don't</h4>
+        <p>You know which clients have cash tied up in receivables. You see the admin bloat in their P&L. You're the only one who can spot the opportunity.</p>
       </div>
-      <div style="padding: 20px; border-radius: 10px; border: 1px solid #e2e8f0;">
-        <h4 style="font-size: 14px; font-weight: 700; color: #0f172a; margin-bottom: 8px;">🤝 You Have the Relationship</h4>
-        <p style="font-size: 13px; color: #64748b; line-height: 1.6;">A warm introduction from you is worth 100 cold emails. Your clients trust your judgment — they'll take the meeting.</p>
+      <div class="why-card">
+        <h4>🤝 You Have the Relationship</h4>
+        <p>A warm introduction from you is worth 100 cold emails. Your clients trust your judgment — they'll take the meeting because you asked them to.</p>
       </div>
-      <div style="padding: 20px; border-radius: 10px; border: 1px solid #e2e8f0;">
-        <h4 style="font-size: 14px; font-weight: 700; color: #0f172a; margin-bottom: 8px;">🏆 You Become the Hero</h4>
-        <p style="font-size: 13px; color: #64748b; line-height: 1.6;">Not only do you solve their biggest operational headache — you also improve their cash flow, making your own job easier.</p>
+      <div class="why-card">
+        <h4>🏆 You Become the Hero</h4>
+        <p>Not only do you solve their biggest operational headache — you also improve their cash flow, making their business healthier and your job easier.</p>
       </div>
     </div>
   </div>
 
   <!-- ===== WHAT YOU DON'T DO ===== -->
-  <div class="section section-alt">
-    <div class="section-label">⚡ Zero Effort From You</div>
+  <div class="section">
+    <div class="section-label">⚡ Zero Effort</div>
     <h2>What <span>you don't</span> have to do.</h2>
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-      <div style="display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: #fff; border-radius: 8px; border: 1px solid #e2e8f0;">
+      <div style="display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: #f8f9fc; border-radius: 8px; border: 1px solid #e2e8f0;">
         <span style="color: #22c55e; font-weight: 700;">✕</span>
         <span style="font-size: 13px; color: #475569;">You don't sell or close the deal</span>
       </div>
-      <div style="display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: #fff; border-radius: 8px; border: 1px solid #e2e8f0;">
+      <div style="display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: #f8f9fc; border-radius: 8px; border: 1px solid #e2e8f0;">
         <span style="color: #22c55e; font-weight: 700;">✕</span>
         <span style="font-size: 13px; color: #475569;">You don't manage the VA team</span>
       </div>
-      <div style="display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: #fff; border-radius: 8px; border: 1px solid #e2e8f0;">
+      <div style="display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: #f8f9fc; border-radius: 8px; border: 1px solid #e2e8f0;">
         <span style="color: #22c55e; font-weight: 700;">✕</span>
         <span style="font-size: 13px; color: #475569;">You don't handle setup or training</span>
       </div>
-      <div style="display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: #fff; border-radius: 8px; border: 1px solid #e2e8f0;">
+      <div style="display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: #f8f9fc; border-radius: 8px; border: 1px solid #e2e8f0;">
         <span style="color: #22c55e; font-weight: 700;">✕</span>
         <span style="font-size: 13px; color: #475569;">You don't support the client post-launch</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: #f8f9fc; border-radius: 8px; border: 1px solid #e2e8f0;">
+        <span style="color: #22c55e; font-weight: 700;">✕</span>
+        <span style="font-size: 13px; color: #475569;">You don't need any technical knowledge</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: #f8f9fc; border-radius: 8px; border: 1px solid #e2e8f0;">
+        <span style="color: #22c55e; font-weight: 700;">✕</span>
+        <span style="font-size: 13px; color: #475569;">You wear no risk — we do the delivering</span>
       </div>
     </div>
   </div>
@@ -555,14 +636,14 @@
   <!-- ===== CTA ===== -->
   <div class="cta-section">
     <h2>Ready to turn your client list into recurring revenue?</h2>
-    <p>Let's set up a 15-minute call. I'll share exactly how the partnership works, show you a sample client pitch you can send today, and answer any questions.</p>
-    <a href="#" class="cta-button" onclick="alert('Replace this with your actual contact link or email. Suggested: mailto:waseem@ehyperise.com or a calendly link.'); return false;">Book a 15-Min Call</a>
-    <p class="small">Or email waseem@ehyperise.com • No obligation. No commitment. Just a conversation.</p>
+    <p>Let's set up a 15-minute call. I'll walk you through the partnership, show you exactly how the introduction works, and answer any questions. No obligation.</p>
+    <a href="#" class="cta-button" onclick="alert('Replace this with your Calendly link or email.'); return false;">Book a 15-Min Call</a>
+    <p class="small">Or email waseem@ehyperise.com</p>
   </div>
 
   <!-- ===== FOOTER ===== -->
   <div class="footer">
-    <p><strong>Ehyperise</strong> — Digital Transformation for Trade & Service Businesses. Made in Sydney, Australia.</p>
+    <p><strong>Ehyperise</strong> — Digital Transformation for Trade & Service Businesses. Sydney, Australia.</p>
   </div>
 
 </div>
