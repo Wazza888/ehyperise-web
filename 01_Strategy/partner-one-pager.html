@@ -8,223 +8,118 @@
     
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+        :root{--e-brand-dark:#0F172A;--e-brand-green:#54B435;--e-brand-grey:#F2F2F2;--e-brand-white:#FFFFFF;--e-brand-black:#000000;--e-border:#d5ead8}
 
-        :root {
-            --strong-black: #000000;
-            --vibrant-green: #61CE70;
-            --warm-yellow: #F9CB40;
-            --light-grey-bg: #F2F2F2;
-            --pure-white: #FFFFFF;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            color: var(--strong-black);
-            background-color: var(--pure-white);
-            line-height: 1.7;
-            font-size: 16px;
-        }
-
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
-        .section { padding: 80px 0; }
-        .section-light-bg { background-color: var(--light-grey-bg); }
-
-        h1, h2, h3 { font-weight: 700; line-height: 1.2; margin-bottom: 20px; }
-        h1 { font-size: 3rem; }
-        h2 { font-size: 2.5rem; text-align: center; }
-        h3 { font-size: 1.5rem; }
-        p { margin-bottom: 20px; }
-
-        .text-center { text-align: center; }
-        .highlight { color: var(--vibrant-green); }
-
-        .btn {
-            display: inline-block; padding: 12px 28px; border-radius: 5px;
-            text-decoration: none; font-weight: 600; transition: all 0.3s ease;
-            cursor: pointer; border: 2px solid transparent;
-        }
-        .btn-primary {
-            background-color: var(--vibrant-green); color: var(--strong-black); font-weight: 700;
-        }
-        .btn-primary:hover {
-            background-color: var(--pure-white); color: var(--strong-black); border-color: var(--vibrant-green);
-        }
-        .btn-secondary {
-            background-color: transparent; color: var(--strong-black); border-color: var(--strong-black);
-        }
-        .btn-secondary:hover {
-            background-color: var(--strong-black); color: var(--pure-white);
-        }
-
-        .hero { padding: 100px 0; text-align: center; }
-        .hero h1 { max-width: 800px; margin-left: auto; margin-right: auto; }
-        .hero .sub-headline { font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px auto; color: var(--strong-black); }
-
-        .pain-points { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 50px; }
-        .pain-point-card { background: var(--pure-white); padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center; border: 1px solid #eee; }
-        .pain-point-card .icon { font-size: 3rem; color: var(--vibrant-green); margin-bottom: 15px; }
-        .pain-point-card h3 { font-size: 1.2rem; margin-bottom: 10px; }
-
-        .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-top: 50px; align-items: center; }
-        .service-card { background: var(--pure-white); padding: 40px; border-radius: 8px; border: 1px solid #ddd; }
-        .service-card .service-number { font-size: 1.2rem; font-weight: 700; color: var(--vibrant-green); margin-bottom: 10px; }
-        .service-card p { font-size: 0.95rem; }
-
-        .value-prop { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-        .value-prop .image-placeholder { width: 100%; height: 400px; background-color: var(--vibrant-green); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--strong-black); font-size: 1.5rem; font-weight: 600; }
-        .value-prop-content h2 { text-align: left; }
-        .value-prop-content p { font-size: 1.1rem; }
-        .value-prop-content ul { list-style: none; margin-top: 20px; }
-        .value-prop-content li { padding-left: 30px; position: relative; margin-bottom: 15px; }
-        .value-prop-content li::before { content: '✓'; color: var(--vibrant-green); font-weight: 700; position: absolute; left: 0; top: 0; }
-
-        .testimonial { max-width: 800px; margin: 0 auto; text-align: center; }
-        .testimonial blockquote { font-size: 1.4rem; font-style: italic; line-height: 1.6; margin-bottom: 20px; color: #333; }
-        .testimonial cite { font-weight: 600; font-style: normal; }
-        .testimonial cite span { display: block; font-weight: 400; color: var(--strong-black); font-size: 0.9rem; }
-
-        .cta-section { background-color: var(--strong-black); color: var(--pure-white); border-radius: 10px; padding: 60px; text-align: center; }
-        .cta-section h2 { color: var(--pure-white); }
-        .cta-section p { max-width: 600px; margin: 0 auto 30px auto; }
-
-        .site-footer { padding: 50px 0; text-align: center; background-color: var(--light-grey-bg); }
-        .site-footer .footer-logo img { max-width: 180px; height: auto; margin-bottom: 20px; }
-        .site-footer p { font-size: 0.9rem; color: #555; margin: 0; }
-
-        @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
-            h2 { font-size: 2rem; }
-            .pain-points, .services-grid, .value-prop { grid-template-columns: 1fr; }
-            .value-prop .image-placeholder { height: 250px; order: -1; }
-            .value-prop-content h2 { text-align: center; }
-            .section { padding: 60px 0; }
+        body{font-family:'Poppins',sans-serif;color:var(--e-brand-black);line-height:1.7;font-size:16px;margin:0;padding:0}
+        .container{max-width:1100px;margin:0 auto;padding:0 2rem}
+        .section{padding:80px 0}
+        .section-grey{background-color:var(--e-brand-grey)}
+        h1,h2,h3{font-weight:700;line-height:1.2;margin-bottom:20px}
+        h1{font-size:3rem;color:var(--e-brand-dark)}
+        h2{font-size:2.5rem;text-align:center;color:var(--e-brand-dark)}
+        h3{font-size:1.5rem}
+        p{margin-bottom:20px}
+        .text-center{text-align:center}
+        .highlight{color:var(--e-brand-green)}
+        .btn{display:inline-block;padding:12px 28px;border-radius:5px;text-decoration:none;font-weight:600;transition:all 0.3s ease;cursor:pointer;border:2px solid transparent}
+        .btn-primary{background-color:var(--e-brand-green);color:var(--e-brand-white);font-weight:700;border-color:var(--e-brand-green)}
+        .btn-primary:hover{background-color:var(--e-brand-dark);color:var(--e-brand-white);border-color:var(--e-brand-dark)}
+        .btn-secondary{background-color:transparent;color:var(--e-brand-dark);border-color:var(--e-brand-dark)}
+        .btn-secondary:hover{background-color:var(--e-brand-dark);color:var(--e-brand-white)}
+        .hero{padding:80px 0;text-align:center}
+        .hero h1{max-width:800px;margin-left:auto;margin-right:auto}
+        .hero .sub-headline{font-size:1.2rem;max-width:700px;margin:0 auto 30px auto;color:var(--e-brand-black)}
+        .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:50px}
+        .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:50px;margin-top:50px;align-items:center}
+        .card{background:var(--e-brand-white);padding:30px;border-radius:8px;box-shadow:0 4px 15px rgba(0,0,0,0.05);text-align:center;border:1px solid var(--e-border)}
+        .card .icon{font-size:3rem;margin-bottom:15px}
+        .card h3{font-size:1.2rem;margin-bottom:10px}
+        .card p{font-size:0.95rem}
+        .service-card{background:var(--e-brand-white);padding:40px;border-radius:8px;border:1px solid var(--e-border)}
+        .service-card .num{font-size:1.2rem;font-weight:700;color:var(--e-brand-green);margin-bottom:10px}
+        .service-card p{font-size:0.95rem}
+        .split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+        .split .image-box{width:100%;height:400px;background-color:var(--e-brand-green);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--e-brand-white);font-size:1.5rem;font-weight:600;flex-direction:column;gap:10px}
+        .split-content h2{text-align:left}
+        .split-content p{font-size:1.1rem}
+        .split-content ul{list-style:none;margin-top:20px}
+        .split-content li{padding-left:30px;position:relative;margin-bottom:15px}
+        .split-content li::before{content:'✓';color:var(--e-brand-green);font-weight:700;position:absolute;left:0;top:0}
+        .testimonial{max-width:800px;margin:0 auto;text-align:center}
+        .testimonial blockquote{font-size:1.4rem;font-style:italic;line-height:1.6;margin-bottom:20px;color:#333}
+        .testimonial cite{font-weight:600;font-style:normal}
+        .testimonial cite span{display:block;font-weight:400;color:var(--e-brand-black);font-size:0.9rem}
+        .cta-box{background-color:var(--e-brand-dark);color:var(--e-brand-white);border-radius:10px;padding:60px;text-align:center}
+        .cta-box h2{color:var(--e-brand-white)}
+        .cta-box p{max-width:600px;margin:0 auto 30px auto}
+        .cta-box .btn-primary{background-color:var(--e-brand-green);color:var(--e-brand-white);border-color:var(--e-brand-green)}
+        .cta-box .btn-primary:hover{background-color:var(--e-brand-white);color:var(--e-brand-dark);border-color:var(--e-brand-white)}
+        
+        @media(max-width:768px){
+            h1{font-size:2.5rem}
+            h2{font-size:2rem}
+            .grid-3,.grid-2,.split{grid-template-columns:1fr}
+            .split .image-box{height:250px;order:-1}
+            .split-content h2{text-align:center}
+            .section{padding:60px 0}
+            .cta-box{border-radius:0}
         }
     </style>
 </head>
 <body>
 
-    <main>
-        <!-- HERO -->
-        <section class="hero">
-            <div class="container">
-                <h1>Earn $750<span class="highlight">/month</span> per client referral.<br>You make the intro. We do everything else.</h1>
-                <p class="sub-headline">
-                    You have clients running on paper, chasing invoices weeks late, and working weekends just to keep up. Ehyperise builds the system that fixes it — a digital operating system with a dedicated VA team. You refer. We deliver. You earn 15% commission for life.
-                </p>
-                <a href="#" class="btn btn-primary" onclick="alert('Replace with your Calendly link'); return false;">Get My Partner Kit</a>
-            </div>
-        </section>
-
-        <!-- PROBLEM -->
-        <section class="section section-light-bg">
-            <div class="container">
-                <h2 class="text-center">You have clients on your books who are<br><span class="highlight">one burnt-out admin away from disaster.</span></h2>
-                <p class="text-center" style="max-width: 700px; margin: 0 auto;">You see it in their P&amp;L. The cash tied up in receivables, the owner working 6-day weeks, the paper-based systems that haven't changed in years.</p>
-                <div class="pain-points">
-                    <div class="pain-point-card">
-                        <div class="icon">💰</div>
-                        <h3>Cash Flow Leaking</h3>
-                        <p>$200k+ in receivables sitting there. They see a system that's always been this way. They don't know what they don't know.</p>
-                    </div>
-                    <div class="pain-point-card">
-                        <div class="icon">⏰</div>
-                        <h3>Owner Burning Out</h3>
-                        <p>Working weekends, approving every job by phone, no one to hand things off to. You've watched it get worse every quarter.</p>
-                    </div>
-                    <div class="pain-point-card">
-                        <div class="icon">📄</div>
-                        <h3>Paper Running the Show</h3>
-                        <p>Job cards, handwritten notes, spreadsheets from years ago. No system — just the owner's memory keeping it together.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- HOW IT WORKS -->
-        <section id="services" class="section">
-            <div class="container">
-                <h2 class="text-center">You already have what we need.<br><span class="highlight">Your client list.</span></h2>
-                <p class="text-center" style="max-width: 700px; margin: 0 auto;">One email is all it takes. Here's exactly how the partnership works.</p>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-number">01</div>
-                        <h3>Pick the Right Client</h3>
-                        <p>You know exactly who's still on paper and working weekends. $1M+ revenue, 5–30 staff, family-run trade or service business. You see their P&amp;L — you already know who needs this.</p>
-                        <a href="#" class="btn btn-secondary" style="margin-top: 20px;" onclick="alert('Replace with Calendly link'); return false;">Refer a Client</a>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-number">02</div>
-                        <h3>Send One Email</h3>
-                        <p>"I've come across a team that fixes the admin problem we keep talking about. Worth a 15-minute chat." That's it. We handle the rest — the sales call, the setup, the training, the ongoing management.</p>
-                        <a href="#" class="btn btn-secondary" style="margin-top: 20px;" onclick="alert('Replace with Calendly link'); return false;">Get Your Intro Kit</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- WHY YOU -->
-        <section class="section section-light-bg">
-            <div class="container">
-                <div class="value-prop">
-                    <div class="image-placeholder" style="background-color: var(--strong-black); flex-direction: column; gap: 10px;">
-                        <div style="font-size: 3.5rem; font-weight: 700; color: var(--vibrant-green);">15%</div>
-                        <div style="font-size: 1.1rem; color: var(--pure-white); font-weight: 400;">Lifetime Commission</div>
-                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--vibrant-green); margin-top: 15px;">$750</div>
-                        <div style="font-size: 1.1rem; color: var(--pure-white); font-weight: 400;">Per Client / Month</div>
-                    </div>
-                    <div class="value-prop-content">
-                        <h2>Three reasons this works better<br><span class="highlight">than any referral program.</span></h2>
-                        <p>No cold outreach. No extra work. Just a warm introduction from you, and you earn while your client gets their time back.</p>
-                        <ul>
-                            <li><strong>You Already Know Who Needs This.</strong> You see their P&L. No sales pitch needed — you already have the right clients in your books.</li>
-                            <li><strong>One Email Is All It Takes.</strong> Your clients trust you. A warm introduction carries more weight than any cold pitch. You send one email, we close the deal.</li>
-                            <li><strong>You Look Like the Hero.</strong> You didn't just flag a problem — you brought the solution. Your client gets their life back, and you earn while they grow.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- IDEAL CLIENT PROFILE -->
-        <section id="testimonial" class="section">
-            <div class="container">
-                <h2 class="text-center">Who to refer.<br><span class="highlight">You already know them.</span></h2>
-                 <div class="testimonial">
-                    <blockquote>
-                        "$1M+ revenue, 5–30 employees, family-run trade or service business. Still running on paper and spreadsheets. Owner works 6-day weeks and approves every job personally. You see their cash tied up in 4-week-overdue invoices."
-                    </blockquote>
-                    <cite>
-                        Your Ideal Referral
-                        <span>You have at least 3 of these on your books right now.</span>
-                    </cite>
-                 </div>
-            </div>
-        </section>
-        
-        <!-- CTA -->
-        <section id="contact" class="section">
-            <div class="container">
-                <div class="cta-section">
-                    <h2>Turn one email into $9,000 this year.<br>And every year after that.</h2>
-                    <p>Let's talk. We'll walk you through how the partnership works, show you exactly who to refer, and answer every question. No commitment. Just a conversation.</p>
-                    <a href="#" class="btn btn-primary" onclick="alert('Replace with your Calendly link'); return false;">Get My Partner Kit</a>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="site-footer">
+    <section class="hero">
         <div class="container">
-            <div class="footer-logo">
-                <img src="http://ehyperise.com/wp-content/uploads/2020/12/cropped-logos.png" alt="Ehyperise Logo">
-            </div>
-            <p>Copyright &copy; 2025 Ehyperise | Digital Transformation for Trade &amp; Service Businesses. Sydney, Australia.</p>
+            <h1>Earn $750<span class="highlight">/month</span> per client referral.<br>You make the intro. We do everything else.</h1>
+            <p class="sub-headline">You have clients running on paper, chasing invoices weeks late, and working weekends just to keep up. Ehyperise builds the system that fixes it — a digital operating system with a dedicated VA team. You refer. We deliver. You earn 15% commission for life.</p>
+            <a href="#" class="btn btn-primary" onclick="alert('Replace with your Calendly link');return false;">Get My Partner Kit</a>
         </div>
-    </footer>
+    </section>
+
+    <section class="section section-grey">
+        <div class="container">
+            <h2 class="text-center">You have clients on your books who are<br><span class="highlight">one burnt-out admin away from disaster.</span></h2>
+            <p class="text-center" style="max-width:700px;margin:0 auto;">You see it in their P&amp;L. The cash tied up in receivables, the owner working 6-day weeks, the paper systems that haven't changed in years.</p>
+            <div class="grid-3">
+                <div class="card"><div class="icon">💰</div><h3>Cash Flow Leaking</h3><p>$200k+ in receivables sitting there. They see a system that's always been this way.</p></div>
+                <div class="card"><div class="icon">⏰</div><h3>Owner Burning Out</h3><p>Working weekends, approving every job by phone, no one to hand things off to.</p></div>
+                <div class="card"><div class="icon">📄</div><h3>Paper Running the Show</h3><p>Job cards, handwritten notes, spreadsheets from years ago. No system — just memory.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="text-center">You already have what we need.<br><span class="highlight">Your client list.</span></h2>
+            <p class="text-center" style="max-width:700px;margin:0 auto;">One email is all it takes. Here's exactly how the partnership works.</p>
+            <div class="grid-2">
+                <div class="service-card"><div class="num">01</div><h3>Pick the Right Client</h3><p>You know exactly who's still on paper, working weekends, and can't seem to grow. $1M+ revenue, 5-30 staff, family-run trade business.</p><a href="#" class="btn btn-secondary" style="margin-top:20px;" onclick="alert('Replace with Calendly link');return false;">Refer a Client</a></div>
+                <div class="service-card"><div class="num">02</div><h3>Send One Email</h3><p>"I've come across a team that fixes the admin problem we keep talking about. Worth a 15-minute chat." That's it. We handle the rest.</p><a href="#" class="btn btn-secondary" style="margin-top:20px;" onclick="alert('Replace with Calendly link');return false;">Get Your Intro Kit</a></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-grey">
+        <div class="container">
+            <div class="split">
+                <div class="image-box" style="background-color:var(--e-brand-dark);"><div style="font-size:3.5rem;font-weight:700;color:var(--e-brand-green);">15%</div><div style="font-size:1.1rem;font-weight:400;">Ongoing Commission</div><div style="font-size:2.5rem;font-weight:700;color:var(--e-brand-green);margin-top:15px;">$750</div><div style="font-size:1.1rem;font-weight:400;">Per Client / Month</div></div>
+                <div class="split-content"><h2>Three reasons this works<br><span class="highlight">better than any referral program.</span></h2><p>No cold outreach. No extra work. Just a warm introduction from you.</p><ul><li><strong>You Already Know Who Needs This.</strong> You see their P&L. You have the right clients in your books already.</li><li><strong>One Email Is All It Takes.</strong> A warm introduction carries more weight than any cold pitch. You send one email, we close the deal.</li><li><strong>You Look Like the Hero.</strong> You didn't just flag a problem — you brought the solution. And you earn while they grow.</li></ul></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="text-center">Who to refer.<br><span class="highlight">You already know them.</span></h2>
+            <div class="testimonial"><blockquote>"$1M+ revenue, 5-30 employees, family-run trade or service business. Still running on paper. Owner works 6-day weeks and approves every job personally. You have at least three of these on your books right now."</blockquote><cite>Your Ideal Referral <span>Trade &amp; Service Businesses in Sydney</span></cite></div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="cta-box"><h2>Turn one email into $9,000 this year.<br>And every year after that.</h2><p>Let's talk. We'll walk you through how the partnership works, show you exactly who to refer, and answer every question. No commitment. Just a conversation.</p><a href="#" class="btn btn-primary" onclick="alert('Replace with your Calendly link');return false;">Get My Partner Kit</a></div>
+        </div>
+    </section>
 
 </body>
 </html>
