@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ehyperise Partner Program — Accountants & Bookkeepers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#FFFFFF;--surface:#F8FAFC;--text:#0F172A;--muted:#64748B;--accent:#54B435;--accent-hover:#0F172A;--border:#E2E8F0;--radius:12px;--shadow:0 4px 20px rgba(0,0,0,0.06);--font:'Inter',sans-serif}
+
+.deck{position:relative;width:100vw;height:100vh;overflow:hidden;font-family:var(--font);background:var(--bg);color:var(--text)}
+.slide{position:absolute;inset:0;opacity:0;pointer-events:none;transition:opacity 0.4s;padding:64px 80px;display:flex;flex-direction:column;justify-content:center;overflow-y:auto}
+.slide.is-active{opacity:1;pointer-events:auto;z-index:1}
+
+/* Navigation */
+.nav-bar{position:fixed;bottom:32px;left:50%;transform:translateX(-50%);z-index:100;display:flex;align-items:center;gap:16px;background:rgba(15,23,42,0.9);color:#fff;padding:10px 20px;border-radius:100px;font-size:14px;backdrop-filter:blur(8px)}
+.nav-bar button{background:none;border:none;color:#fff;font-size:18px;cursor:pointer;padding:4px 8px;border-radius:6px;transition:background 0.2s}
+.nav-bar button:hover{background:rgba(255,255,255,0.15)}
+.nav-bar .counter{font-weight:500;min-width:60px;text-align:center}
+.progress-dots{position:fixed;top:24px;right:40px;z-index:100;display:flex;gap:6px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--border);transition:all 0.3s}
+.dot.active{background:var(--accent);transform:scale(1.3)}
+
+/* Typography */
+h1{font-size:3.2rem;font-weight:800;line-height:1.15;margin-bottom:20px}
+h2{font-size:2.4rem;font-weight:700;line-height:1.2;margin-bottom:16px}
+h3{font-size:1.3rem;font-weight:600;margin-bottom:8px}
+p{font-size:1.1rem;line-height:1.7;color:var(--muted);margin-bottom:16px;max-width:680px}
+.lede{font-size:1.2rem;max-width:600px}
+.accent{color:var(--accent)}
+.kicker{font-size:0.85rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+
+/* Cover */
+.cover{background:linear-gradient(135deg,#0F172A 0%,#1a2744 100%);color:#fff;padding:80px}
+.cover h1{font-size:3.8rem;max-width:750px}
+.cover p{color:rgba(255,255,255,0.7);max-width:600px}
+.cover .kicker{color:var(--accent)}
+.cover .meta{margin-top:40px;display:flex;gap:32px;font-size:0.95rem;color:rgba(255,255,255,0.5)}
+.cover .logo{font-size:1.2rem;font-weight:700;color:var(--accent);margin-bottom:40px}
+
+/* Stats */
+.stat-row{display:flex;gap:40px;margin-top:32px}
+.stat-item .num{font-size:2.8rem;font-weight:800;color:var(--accent);line-height:1}
+.stat-item .label{font-size:0.9rem;color:var(--muted);margin-top:4px}
+.cover .stat-item .num{color:var(--accent)}
+.cover .stat-item .label{color:rgba(255,255,255,0.6)}
+
+/* Cards */
+.grid{display:grid;gap:20px;margin-top:24px}
+.g2{grid-template-columns:1fr 1fr}
+.g3{grid-template-columns:1fr 1fr 1fr}
+.g4{grid-template-columns:1fr 1fr 1fr 1fr}
+.card{background:var(--surface);padding:28px;border-radius:var(--radius);border:1px solid var(--border);transition:box-shadow 0.2s}
+.card:hover{box-shadow:var(--shadow)}
+.card .icon{font-size:2rem;margin-bottom:12px}
+.card h3{font-size:1.1rem}
+.card p{font-size:0.95rem;margin:0}
+.card .big{font-size:2rem;font-weight:800;color:var(--accent);line-height:1;margin-bottom:4px}
+.card .sub{font-size:0.85rem;color:var(--muted)}
+
+/* Split layout */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.split-left{padding-right:40px}
+.split-right{background:var(--surface);padding:40px;border-radius:var(--radius);border:1px solid var(--border)}
+
+/* Highlight box */
+.highlight-box{background:var(--surface);border-left:4px solid var(--accent);padding:20px 24px;border-radius:0 var(--radius) var(--radius) 0;margin-top:20px}
+.highlight-box p{margin:0;font-size:1rem}
+
+/* Process flow */
+.process{display:flex;gap:16px;margin-top:28px;align-items:flex-start}
+.process .step{flex:1;text-align:center;padding:20px 16px;background:var(--surface);border-radius:var(--radius);border:1px solid var(--border)}
+.process .step .num{width:36px;height:36px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;margin:0 auto 12px;font-size:0.95rem}
+.process .step h4{font-size:1rem;margin-bottom:6px}
+.process .step p{font-size:0.85rem;margin:0;color:var(--muted)}
+.process .arrow{display:flex;align-items:center;font-size:1.5rem;color:var(--accent);padding-top:40px}
+
+/* Table */
+table{width:100%;border-collapse:collapse;margin-top:20px}
+th{text-align:left;font-size:0.8rem;text-transform:uppercase;letter-spacing:1px;color:var(--muted);font-weight:600;padding:12px 8px;border-bottom:2px solid var(--border)}
+td{padding:14px 8px;border-bottom:1px solid var(--border);font-size:0.95rem}
+td:last-child{font-weight:700;color:var(--accent)}
+tr:last-child td{border:none}
+
+/* Client profile chips */
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.chip{padding:10px 18px;background:var(--surface);border:1px solid var(--border);border-radius:100px;font-size:0.9rem;font-weight:500}
+
+/* Q&A slide */
+.qa-slide{background:linear-gradient(135deg,#0F172A 0%,#1a2744 100%);color:#fff;text-align:center;align-items:center}
+.qa-slide h1{font-size:4rem;margin-bottom:12px}
+.qa-slide p{color:rgba(255,255,255,0.7);max-width:500px}
+.qa-contact{margin-top:40px;display:flex;gap:40px;justify-content:center}
+.qa-contact div{text-align:center}
+.qa-contact .name{font-weight:600;font-size:1.1rem;color:#fff}
+.qa-contact .title{font-size:0.85rem;color:rgba(255,255,255,0.5);margin-top:2px}
+
+/* Animations */
+.fade-in{opacity:0;transform:translateY(20px);animation:fadeIn 0.6s forwards}
+.delay-1{animation-delay:0.1s}
+.delay-2{animation-delay:0.2s}
+.delay-3{animation-delay:0.3s}
+.delay-4{animation-delay:0.4s}
+@keyframes fadeIn{to{opacity:1;transform:translateY(0)}}
+
+@media(max-width:900px){
+  .slide{padding:40px 32px}
+  .cover{padding:40px 32px}
+  .cover h1{font-size:2.4rem}
+  h1{font-size:2.2rem}
+  h2{font-size:1.6rem}
+  .g2,.g3,.g4{grid-template-columns:1fr}
+  .split{grid-template-columns:1fr;gap:30px}
+  .split-left{padding-right:0}
+  .stat-row{flex-direction:column;gap:20px}
+  .process{flex-direction:column}
+  .process .arrow{transform:rotate(90deg);padding:8px 0}
+  .nav-bar{bottom:16px;padding:8px 16px;font-size:13px}
+  .progress-dots{top:16px;right:20px}
+  .qa-contact{flex-direction:column;gap:20px}
+}
+</style>
+</head>
+<body>
+
+<div class="deck">
+
+  <!-- SLIDE 1: COVER -->
+  <section class="slide cover is-active" data-title="Cover">
+    <div class="logo fade-in">Ehyperise</div>
+    <p class="kicker fade-in delay-1">Partner Program · Accountants &amp; Bookkeepers</p>
+    <h1 class="fade-in delay-2">Your clients are drowning in admin.<br><span class="accent">We fix it. You earn 15% for life.</span></h1>
+    <p class="fade-in delay-3">A referral partnership that turns one email introduction into ongoing passive income. No extra work. No risk. Just your existing client relationships.</p>
+    <div class="stat-row fade-in delay-4">
+      <div class="stat-item"><div class="num">15%</div><div class="label">Lifetime Commission</div></div>
+      <div class="stat-item"><div class="num">$9k+</div><div class="label">Per Client / Year</div></div>
+      <div class="stat-item"><div class="num">1</div><div class="label">Email to Start</div></div>
+    </div>
+    <div class="meta fade-in delay-4">Ehyperise · Sydney · Confidential</div>
+  </section>
+
+  <!-- SLIDE 2: THE PROBLEM -->
+  <section class="slide" data-title="The Problem">
+    <p class="kicker fade-in">What You See Every Day</p>
+    <h2 class="fade-in delay-1">Your clients are burning cash<br><span class="accent">on their own admin.</span></h2>
+    <p class="lede fade-in delay-2">And they don't even see it. Here's what's really happening inside the businesses on your books:</p>
+    <div class="grid g3 fade-in delay-3">
+      <div class="card">
+        <div class="icon">💰</div>
+        <h3>Cash Trapped in Receivables</h3>
+        <p>$150-250k sitting in unpaid invoices. They're effectively lending money to their customers interest-free.</p>
+      </div>
+      <div class="card">
+        <div class="icon">⏰</div>
+        <h3>Owner Working 6-Day Weeks</h3>
+        <p>The founder is the dispatcher, the approver, and the admin department rolled into one. They can't step away.</p>
+      </div>
+      <div class="card">
+        <div class="icon">📄</div>
+        <h3>Paper Running Everything</h3>
+        <p>Job cards in gloveboxes, handwritten notes, spreadsheets from 2019. No system — just the owner's memory.</p>
+      </div>
+    </div>
+    <div class="highlight-box fade-in delay-4">
+      <p><strong>Per client, this costs $200-270k/year in wasted time, inefficiency, and missed growth.</strong> You see the P&amp;L. You already know who's bleeding.</p>
+    </div>
+  </section>
+
+  <!-- SLIDE 3: THE SOLUTION -->
+  <section class="slide" data-title="The Solution">
+    <p class="kicker fade-in">The Ehyperise System</p>
+    <h2 class="fade-in delay-1">A complete digital operating system<br><span class="accent">for trade &amp; service businesses.</span></h2>
+    <p class="fade-in delay-2">Three integrated pillars that replace chaos with a machine that runs without the owner.</p>
+    <div class="grid g3 fade-in delay-3">
+      <div class="card" style="border-top:4px solid var(--accent)">
+        <div class="icon">📋</div>
+        <h3>Field Operations</h3>
+        <p>Auto job cards from email, digital approvals, mandatory photo QC. Every job searchable by address in 2 seconds. No more paper trails.</p>
+      </div>
+      <div class="card" style="border-top:4px solid var(--accent)">
+        <div class="icon">🧠</div>
+        <h3>The Company Brain</h3>
+        <p>A searchable wiki of every procedure + a training academy so new hires represent the brand exactly as the founder built it. The business survives its owner.</p>
+      </div>
+      <div class="card" style="border-top:4px solid var(--accent)">
+        <div class="icon">👥</div>
+        <h3>Managed Admin Team</h3>
+        <p>A 3-person VA team handling invoicing, scheduling, and dispatch. Ehyperise trains and manages them. The client does nothing but get their time back.</p>
+      </div>
+    </div>
+    <div class="highlight-box fade-in delay-4">
+      <p><strong>Fixed monthly cost. No hiring, no turnover, no management overhead.</strong> The first month our VA team is in place, the owner gets a weekend back.</p>
+    </div>
+  </section>
+
+  <!-- SLIDE 4: THE REFERRAL PROCESS -->
+  <section class="slide" data-title="How It Works">
+    <p class="kicker fade-in">How The Partnership Works</p>
+    <h2 class="fade-in delay-1">One email. That's all it takes.<br><span class="accent">We handle everything after.</span></h2>
+    <div class="process fade-in delay-2">
+      <div class="step">
+        <div class="num">1</div>
+        <h4>Identify the Client</h4>
+        <p>You know who's struggling. $1M+ rev, paper-based, owner working weekends. You see their numbers — trust your gut.</p>
+      </div>
+      <div class="arrow">→</div>
+      <div class="step">
+        <div class="num">2</div>
+        <h4>Send One Email</h4>
+        <p>"I've come across a team that fixes the admin problem. Worth a 15-min chat." That's the entire ask. We handle the rest.</p>
+      </div>
+      <div class="arrow">→</div>
+      <div class="step">
+        <div class="num">3</div>
+        <h4>Collect 15% Monthly</h4>
+        <p>We close, onboard, and manage. You earn 15% of the monthly fee for life. No cap. No extra work. Ever.</p>
+      </div>
+    </div>
+    <div class="stat-row fade-in delay-3" style="justify-content:center;gap:60px">
+      <div class="stat-item"><div class="num">15%</div><div class="label">Lifetime Recurring</div></div>
+      <div class="stat-item"><div class="num">$0</div><div class="label">Work From You</div></div>
+      <div class="stat-item"><div class="num">∞</div><div class="label">No Cap on Earnings</div></div>
+    </div>
+  </section>
+
+  <!-- SLIDE 5: THE NUMBERS -->
+  <section class="slide" data-title="The Numbers">
+    <p class="kicker fade-in">Commission Structure</p>
+    <h2 class="fade-in delay-1">Refer 5 clients = <span class="accent">$45,000/year</span> in passive income.</h2>
+    <p class="lede fade-in delay-2">Recurring, not one-off. You earn every month for as long as the client stays.</p>
+    <div class="split fade-in delay-3">
+      <div class="split-left">
+        <table>
+          <tr><th>Clients</th><th>Your Monthly</th><th>Your Annual</th></tr>
+          <tr><td>1 client</td><td>$750/mo</td><td>$9,000/yr</td></tr>
+          <tr><td>3 clients</td><td>$2,250/mo</td><td>$27,000/yr</td></tr>
+          <tr><td>5 clients</td><td>$3,750/mo</td><td>$45,000/yr</td></tr>
+          <tr><td>10 clients</td><td>$7,500/mo</td><td>$90,000/yr</td></tr>
+        </table>
+      </div>
+      <div class="split-right">
+        <h3 style="font-size:1.1rem">At every client tier</h3>
+        <p style="font-size:0.95rem">Your commission is a fixed 15% of the monthly fee. If your client upgrades to a higher tier, your commission grows automatically. If they add services, so does your cut.</p>
+        <div style="margin-top:16px">
+          <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border)">
+            <span style="font-size:0.9rem">Starter</span>
+            <span style="font-weight:700;color:var(--accent)">$450/mo</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border)">
+            <span style="font-size:0.9rem">Standard</span>
+            <span style="font-weight:700;color:var(--accent)">$750/mo</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:8px 0">
+            <span style="font-size:0.9rem">Premium</span>
+            <span style="font-weight:700;color:var(--accent)">$1,125/mo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 6: IDEAL CLIENT -->
+  <section class="slide" data-title="Ideal Client">
+    <p class="kicker fade-in">Who To Refer</p>
+    <h2 class="fade-in delay-1">These are the clients<br><span class="accent">you already worry about.</span></h2>
+    <p class="fade-in delay-2">You see their P&amp;L. You know who's trapped in the weeds. Here's the profile:</p>
+    <div class="chips fade-in delay-3">
+      <span class="chip">💰 $1M+ annual revenue</span>
+      <span class="chip">📄 Still on paper or spreadsheets</span>
+      <span class="chip">👥 5–30 employees</span>
+      <span class="chip">🏠 Family-run business</span>
+      <span class="chip">📞 Owner approves every job</span>
+      <span class="chip">💳 Invoices 4+ weeks overdue</span>
+      <span class="chip">📅 Owner works 6+ days/week</span>
+      <span class="chip">🛠️ Trade, service, or construction</span>
+      <span class="chip">😤 "Too busy to fix the admin"</span>
+    </div>
+    <div class="highlight-box fade-in delay-4">
+      <p><strong>If 3+ of these fit, they're ready.</strong> A warm introduction from you is all it takes to start the conversation.</p>
+    </div>
+  </section>
+
+  <!-- SLIDE 7: WHY YOU -->
+  <section class="slide" data-title="Why You">
+    <p class="kicker fade-in">Why This Works For You</p>
+    <h2 class="fade-in delay-1">Three reasons this is<br><span class="accent">better than any referral deal</span> you've seen.</h2>
+    <div class="grid g3 fade-in delay-2">
+      <div class="card">
+        <div class="icon">🔍</div>
+        <h3>You Already Have The List</h3>
+        <p>No cold outreach, no networking events, no LinkedIn grinding. The right clients are already on your books. You see their P&amp;L — you know who's bleeding.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🤝</div>
+        <h3>One Email, Zero Work</h3>
+        <p>Your clients trust your judgment. A warm introduction from you carries more weight than any cold pitch we could make. You send one email. We close the deal and deliver everything.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🏆</div>
+        <h3>You Look Like The Hero</h3>
+        <p>You didn't just flag a problem — you brought the solution. Your client gets their time back, their cash flow improves, and their business can finally scale. And you earn while they grow.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 8: WHAT YOU DON'T DO -->
+  <section class="slide" data-title="Zero Work">
+    <p class="kicker fade-in">What You Don't Do</p>
+    <h2 class="fade-in delay-1">You make the introduction.<br><span class="accent">We do absolutely everything else.</span></h2>
+    <div class="grid g2 fade-in delay-2" style="max-width:700px">
+      <div class="card" style="text-align:center"><div style="font-size:2.5rem;font-weight:700;color:var(--accent)">✕</div><h3 style="margin-top:8px">You don't sell or close</h3></div>
+      <div class="card" style="text-align:center"><div style="font-size:2.5rem;font-weight:700;color:var(--accent)">✕</div><h3 style="margin-top:8px">You don't manage the VA team</h3></div>
+      <div class="card" style="text-align:center"><div style="font-size:2.5rem;font-weight:700;color:var(--accent)">✕</div><h3 style="margin-top:8px">You don't handle setup or training</h3></div>
+      <div class="card" style="text-align:center"><div style="font-size:2.5rem;font-weight:700;color:var(--accent)">✕</div><h3 style="margin-top:8px">You don't support the client post-launch</h3></div>
+    </div>
+    <div class="highlight-box fade-in delay-3" style="max-width:700px">
+      <p><strong>Your only job: identify the client and send one email intro.</strong> We take it from there. You earn 15% for the life of the client.</p>
+    </div>
+  </section>
+
+  <!-- SLIDE 9: WHY NOW -->
+  <section class="slide" data-title="Why Now">
+    <p class="kicker fade-in">The Timing</p>
+    <h2 class="fade-in delay-1">Your clients aren't getting less busy.<br><span class="accent">The window to act is now.</span></h2>
+    <div class="grid g3 fade-in delay-2">
+      <div class="card">
+        <div class="icon">📈</div>
+        <h3>The Market Is Ready</h3>
+        <p>Trade businesses are busier than ever. The ones who systemise will dominate the next 5 years. The ones who don't will burn out or sell cheap.</p>
+      </div>
+      <div class="card">
+        <div class="icon">👴</div>
+        <h3>The Owner Is Tired</h3>
+        <p>Post-COVID, tradie business owners are asking the same question: "Is this really what I built this for?" They're ready for a change.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🛡️</div>
+        <h3>Your Clients Need Protection</h3>
+        <p>Every business that runs on one person's knowledge is one car accident away from collapse. You care about your clients — this protects them.</p>
+      </div>
+    </div>
+    <div class="stat-row fade-in delay-3" style="justify-content:center">
+      <div class="stat-item"><div class="num">70%</div><div class="label">of trade business owners say admin is their #1 stressor</div></div>
+    </div>
+  </section>
+
+  <!-- SLIDE 10: CTA -->
+  <section class="slide" data-title="Next Steps">
+    <p class="kicker fade-in">Next Steps</p>
+    <h2 class="fade-in delay-1">Let's turn your client list into<br><span class="accent">recurring revenue.</span></h2>
+    <p class="lede fade-in delay-2">Here's how we get started — no commitment, just a conversation.</p>
+    <div class="process fade-in delay-3" style="max-width:800px">
+      <div class="step">
+        <div class="num">1</div>
+        <h4>15-Minute Call</h4>
+        <p>We walk you through the partnership, answer every question, and show you exactly who to refer.</p>
+      </div>
+      <div class="arrow">→</div>
+      <div class="step">
+        <div class="num">2</div>
+        <h4>We Send You the Kit</h4>
+        <p>One-page summary, email template, ideal client checklist. Everything you need to start in 5 minutes.</p>
+      </div>
+      <div class="arrow">→</div>
+      <div class="step">
+        <div class="num">3</div>
+        <h4>First Intro</h4>
+        <p>Pick one client from your books. Send the email. We handle the rest. You'll see your first commission within 30 days.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px" class="fade-in delay-4">
+      <p style="font-size:1.2rem;font-weight:600;color:var(--text);margin-bottom:4px">waseem@ehyperise.com</p>
+      <p style="font-size:0.95rem;color:var(--muted)">Or book a time — I'll come to you</p>
+    </div>
+  </section>
+
+  <!-- SLIDE 11: Q&A -->
+  <section class="slide qa-slide" data-title="Questions">
+    <p class="kicker fade-in" style="color:var(--accent)">Partner Program</p>
+    <h1 class="fade-in delay-1">Questions?</h1>
+    <p class="fade-in delay-2" style="max-width:500px">Your clients trust you. Now you can return that trust with a solution that actually works — and earn while they grow.</p>
+    <div class="qa-contact fade-in delay-3">
+      <div><div class="name">Waseem Khan</div><div class="title">waseem@ehyperise.com</div></div>
+    </div>
+    <p style="margin-top:40px;font-size:0.85rem;color:rgba(255,255,255,0.3)" class="fade-in delay-4">Ehyperise · Digital Transformation for Trade &amp; Service Businesses · Sydney</p>
+  </section>
+
+</div>
+
+<!-- Navigation -->
+<div class="nav-bar">
+  <button onclick="prevSlide()">←</button>
+  <span class="counter" id="counter">1 / 11</span>
+  <button onclick="nextSlide()">→</button>
+</div>
+
+<div class="progress-dots" id="dots"></div>
+
+<script>
+(function(){
+  const slides = document.querySelectorAll('.slide');
+  const total = slides.length;
+  let current = 0;
+  const counter = document.getElementById('counter');
+  const dotsContainer = document.getElementById('dots');
+
+  // Build dots
+  for(let i = 0; i < total; i++){
+    const dot = document.createElement('div');
+    dot.className = 'dot' + (i === 0 ? ' active' : '');
+    dotsContainer.appendChild(dot);
+  }
+  const dots = dotsContainer.querySelectorAll('.dot');
+
+  function showSlide(index){
+    slides.forEach((s, i) => {
+      s.classList.toggle('is-active', i === index);
+    });
+    dots.forEach((d, i) => {
+      d.classList.toggle('active', i === index);
+    });
+    counter.textContent = (index + 1) + ' / ' + total;
+    current = index;
+  }
+
+  window.nextSlide = function(){
+    if(current < total - 1) showSlide(current + 1);
+  };
+  window.prevSlide = function(){
+    if(current > 0) showSlide(current - 1);
+  };
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') {
+      e.preventDefault(); nextSlide();
+    }
+    if(e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+      e.preventDefault(); prevSlide();
+    }
+    if(e.key === 'f' || e.key === 'F') {
+      if(document.fullscreenElement) document.exitFullscreen();
+      else document.documentElement.requestFullscreen();
+    }
+    // Number keys to jump to slide
+    const n = parseInt(e.key);
+    if(n >= 1 && n <= total) showSlide(n - 1);
+  });
+
+  // Touch support
+  let touchStartX = 0;
+  document.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; });
+  document.addEventListener('touchend', e => {
+    const diff = touchStartX - e.changedTouches[0].screenX;
+    if(Math.abs(diff) > 50){
+      if(diff > 0) nextSlide();
+      else prevSlide();
+    }
+  });
+})();
+</script>
+</body>
+</html>
